@@ -1,0 +1,15 @@
+iframe {
+}
+.joinbtn{
+	text-decoration: none;
+	color: black;
+	background-color: transparent;
+	border-radius: 5px;
+	border: 2px solid orange;
+	padding: 6px 20px;
+}
+.joinbtn:hover{
+	background-color: orange;
+	color: white;
+}
+

@@ -1,0 +1,10 @@
+.testim .dots .dot.active, .testim .dots .dot:hover {
+  background: #ea830e;
+  border-color: #ea830e;
+}
+
+.testim .cont {
+  position: relative;
+  overflow: hidden;
+}
+

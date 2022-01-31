@@ -53,20 +53,20 @@
 #carousel-t .signature {
   font-size: 24px;
   font-style: normal;
-  font-family: 'Roboto Condensed', Arial, Sans;
-  font-weight: 700;
+  font-family: bell;
+ /* font-weight: 700;*/
   margin: 0;
 }
 
 #carousel-t .date {
   font-size: 14px;
-  font-style: italic;
+  font-style: bold;
   margin-bottom: 10px;
 }
 
 #carousel-t p {
   font-size: 18px;
-  font-family: 'Roboto Condensed', Arial, Sans;
+  font-family: bell;
 }
 
 #carousel-t .rating {

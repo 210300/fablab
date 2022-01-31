@@ -14,10 +14,20 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Student form</title>
    </head>
+   <style>
+    body {
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 10px;
+background-image: url(assets/img/b3.jpg);
+}
+  </style>
 <body>
-  <div class="container"><br><br><br>
+  <div class="container" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 40px; border-bottom: 3px solid #f37b53;">
     <div style="margin: 0 auto;" class="col-12 col-md-12  customborder">
-
+      <br><br><br><br><br><br>
         <% if(typeof err !='undefined' ){ %>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 <strong> Error </strong>
@@ -30,7 +40,7 @@
    
     <div class="content">
       <form action="/signup" method="POST">
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
@@ -81,7 +91,9 @@
 
         </div>
       </form>
-      
+      <div class="signup-link" style="text-align: center; text-decoration: none;"><span>
+        Ready to be a member?</span><span></span><a href="login">Login Now</a>
+        </div>
     </div>
   </div><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"

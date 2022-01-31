@@ -6,7 +6,19 @@ const passport = require('passport');
 require('./passportLocal')(passport);
 // require('./googleAuth')(passport);
 const userRoutes = require('./userRoutes');
+const logger = require('../config/logger');
+router.use(express.json());
 
+//for logger 
+router.use((req, res, next) => {
+    logger.info(req.body);
+    let oldSend = res.render;
+    res.render = function (data) {
+      logger.info(data);
+      oldSend.apply(res, arguments);
+    }
+    next();
+  })
 
 function checkAuth(req, res,next){
     if (req.isAuthenticated()){
@@ -31,19 +43,19 @@ router.get('/register', (req, res) => {
 
 
 router.get('/signup', (req, res) => {
-    res.render("signup",{ csrfToken: req.csrfToken() });
+    res.render("signup", {success:1, message:"hi"});
 });
 router.get('/community', (req, res) => {
-    res.render("community",{ csrfToken: req.csrfToken() });
+    res.render("community");
 });
 router.get('/startup', (req, res) => {
-    res.render("startup",{ csrfToken: req.csrfToken() });
+    res.render("startup");
 });
 router.get('/company', (req, res) => {
-    res.render("company",{ csrfToken: req.csrfToken() });
+    res.render("company");
 });
 router.get('/login', (req, res) => {
-    res.render("login", { csrfToken: req.csrfToken() });
+    res.render("login");
 });
 
 
@@ -54,9 +66,9 @@ router.post('/signup', (req, res) => {
     const { email, username, phoneNumber, schoolName, gender, files, password, confirmpassword, } = req.body;
     // check if the are empty 
     if (!email || !username  || !password || !confirmpassword ) {
-        res.render("signup", { err: "All Fields Required !", csrfToken: req.csrfToken() });
+        res.render("signup", { err: "All Fields Required !"});
     } else if (password != confirmpassword) {
-        res.render("signup", { err: "Password Don't Match !", csrfToken: req.csrfToken() });
+        res.send("signup", { err: "Password Don't Match !", data:"password didn't match"});
     } else {
 
         // validate email and username and password 
@@ -65,7 +77,7 @@ router.post('/signup', (req, res) => {
         user.findOne({ $or: [{ email: email }, { username: username }] }, function (err, data) {
             if (err) throw err;
             if (data) {
-                res.render("signup", { err: "User Exists, Try Logging In !", csrfToken: req.csrfToken() });
+                res.render("signup", { err: "User Exists, Try Logging In !" });
             } else {
                 // generate a salt
                 bcryptjs.genSalt(12, (err, salt) => {
@@ -90,8 +102,9 @@ router.post('/signup', (req, res) => {
                             // login the user
                             // use req.login
                             // redirect , if you don't want to login
-                            console.log(data);
+                            
                             res.redirect('/profile');
+                            
                         });
                     })
                 });
@@ -105,9 +118,9 @@ router.post('/community', (req, res) => {
     const { organizationName, Location, phoneNumber, email, password, confirmpassword, } = req.body;
     // check if the are empty 
     if (!email || !organizationName  || !password || !confirmpassword ) {
-        res.render("community", { err: "All Fields Required !", csrfToken: req.csrfToken() });
+        res.render("community", { err: "All Fields Required !"});
     } else if (password != confirmpassword) {
-        res.render("community", { err: "Password Don't Match !", csrfToken: req.csrfToken() });
+        res.render("community", { err: "Password Don't Match !" });
     } else {
 
         // validate email and username and password 
@@ -116,7 +129,7 @@ router.post('/community', (req, res) => {
         user.findOne({ $or: [{ email: email }, { username: organizationName }] }, function (err, data) {
             if (err) throw err;
             if (data) {
-                res.render("community", { err: "User Exists, Try Logging In !", csrfToken: req.csrfToken() });
+                res.render("community", { err: "User Exists, Try Logging In !"});
             } else {
                 // generate a salt
                 bcryptjs.genSalt(12, (err, salt) => {
@@ -139,7 +152,7 @@ router.post('/community', (req, res) => {
                             // login the user
                             // use req.login
                             // redirect , if you don't want to login
-                            console.log(data);
+                            
                             res.redirect('/profile');
                         });
                     })
@@ -155,9 +168,9 @@ router.post('/startup', (req, res) => {
     const { firmName, Location, phoneNumber, email, password, confirmpassword, } = req.body;
     // check if the are empty 
     if (!email || !firmName  || !password || !confirmpassword ) {
-        res.render("startup", { err: "All Fields Required !", csrfToken: req.csrfToken() });
+        res.render("startup", { err: "All Fields Required !"});
     } else if (password != confirmpassword) {
-        res.render("startup", { err: "Password Don't Match !", csrfToken: req.csrfToken() });
+        res.render("startup", { err: "Password Don't Match !"});
     } else {
 
         // validate email and username and password 
@@ -166,7 +179,7 @@ router.post('/startup', (req, res) => {
         user.findOne({ $or: [{ email: email }, { username: firmName }] }, function (err, data) {
             if (err) throw err;
             if (data) {
-                res.render("startup", { err: "User Exists, Try Logging In !", csrfToken: req.csrfToken() });
+                res.render("startup", { err: "User Exists, Try Logging In !"});
             } else {
                 // generate a salt
                 bcryptjs.genSalt(12, (err, salt) => {
@@ -189,7 +202,7 @@ router.post('/startup', (req, res) => {
                             // login the user
                             // use req.login
                             // redirect , if you don't want to login
-                            console.log(data);
+                           
                             res.redirect('/profile');
                         });
                     })
@@ -204,9 +217,9 @@ router.post('/company', (req, res) => {
     const { email, companyName, phoneNumber,Location, gender, password, confirmpassword, } = req.body;
     // check if the are empty 
     if (!email || !companyName  || !password || !confirmpassword ) {
-        res.render("company", { err: "All Fields Required !", csrfToken: req.csrfToken() });
+        res.render("company", { err: "All Fields Required !"});
     } else if (password != confirmpassword) {
-        res.render("company", { err: "Password Don't Match !", csrfToken: req.csrfToken() });
+        res.render("company", { err: "Password Don't Match !" });
     } else {
 
         // validate email and username and password 
@@ -215,7 +228,7 @@ router.post('/company', (req, res) => {
         user.findOne({ $or: [{ email: email }, { username: companyName }] }, function (err, data) {
             if (err) throw err;
             if (data) {
-                res.render("company", { err: "User Exists, Try Logging In !", csrfToken: req.csrfToken() });
+                res.render("company", { err: "User Exists, Try Logging In !" });
             } else {
                 // generate a salt
                 bcryptjs.genSalt(12, (err, salt) => {
@@ -239,7 +252,7 @@ router.post('/company', (req, res) => {
                             // login the user
                             // use req.login
                             // redirect , if you don't want to login
-                            console.log(data);
+                            
                             res.redirect('/profile');
                         });
                     })
@@ -318,11 +331,25 @@ router.get('/program', (req,res) =>{
         res.render("program", { logged: false });
     }
 })
-router.get('/readmore', (req,res) =>{
+router.get('/trainingprogram', (req,res) =>{
     if (req.isAuthenticated()) {
-        res.render("readmore", { logged: true });
+        res.render("trainingprogram", { logged: true });
     } else {
-        res.render("readmore", { logged: false });
+        res.render("trainingprogram", { logged: false });
+    }
+})
+router.get('/research', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("research", { logged: true });
+    } else {
+        res.render("research", { logged: false });
+    }
+})
+router.get('/newsandEvents', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("newsandevents", { logged: true });
+    } else {
+        res.render("newsandevents", { logged: false });
     }
 })
 router.get('/resource', (req,res) =>{
@@ -332,6 +359,13 @@ router.get('/resource', (req,res) =>{
         res.render("resource", { logged: false });
     }
 })
+router.get('/gallery', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("gallery", { logged: true });
+    } else {
+        res.render("gallery", { logged: false });
+    }
+})
 router.get('/service', (req,res) =>{
     if (req.isAuthenticated()) {
         res.render("service", { logged: true });
@@ -339,8 +373,84 @@ router.get('/service', (req,res) =>{
         res.render("service", { logged: false });
     }
 })
+router.get('/frontbooking', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("frontendBooking", { logged: true });
+    } else {
+        res.render("frontendBooking", { logged: false });
+    }
+})
+router.get('/book', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("book", { logged: true });
+    } else {
+        res.render("book", { logged: false });
+    }
+})
+router.get('/stemfile', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("stemfile", { logged: true });
+    } else {
+        res.render("stemfile", { logged: false });
+    }
+})
+router.get('/fabacademy', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("fabacademy", { logged: true });
+    } else {
+        res.render("fabacademy", { logged: false });
+    }
+})
+router.get('/induction', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("induction", { logged: true });
+    } else {
+        res.render("induction", { logged: false });
+    }
+})
+router.get('/operate', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("operate", { logged: true });
+    } else {
+        res.render("operate", { logged: false });
+    }
+})
+router.get('/inventure', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("inventure", { logged: true });
+    } else {
+        res.render("inventure", { logged: false });
+    }
+})
 
-
+router.get('/resourceinside', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("resourceinside", { logged: true });
+    } else {
+        res.render("resourceinside", { logged: false });
+    }
+})
+router.get('/trainingresource', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("trainingresource", { logged: true });
+    } else {
+        res.render("trainingresource", { logged: false });
+    }
+})
+router.get('/machinemanual', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("machinemanual", { logged: true });
+    } else {
+        res.render("machinemanual", { logged: false });
+    }
+})
+router.get('/video', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("vidoe", { logged: true });
+    } else {
+        res.render("vidoe", { logged: false });
+    }
+})
 
 router.use(userRoutes);
 module.exports = router;

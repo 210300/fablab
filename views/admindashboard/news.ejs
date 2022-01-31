@@ -1,0 +1,81 @@
+<%- include('partials/header.ejs')  %>
+
+                <table class="table table-bordered" style="margin-left:10px ;">
+                    <thead class="thead-dark">
+                       
+                        <h2><b>News And Events</b></h2>
+                        <form class="row g-3 needs-validation" method="POST" action='/addNews' enctype="multipart/form-data"> 
+
+                        
+
+                            <div class="col-6">
+                                <div class="form-floating mb-3">
+                                    <label for="floatingInput">Title</label>
+                                  <input type="text" class="form-control" id="floatingInput" value=""  name="title">
+                                  
+                                </div>
+                              </div>
+                              <div class="col-6">
+                                <div class="form-floating mb-3">
+                                    <label for="floatingInput">Image</label>
+                                  <input type="file" class="form-control-file" id="floatingInput" id="image" name="image">
+                                  
+                                </div>
+                              </div>
+                              <div class="col-6">
+                                <div class="form-floating mb-3">
+                                    <label for="floatingInput">Description</label>
+                                  <textarea class="form-control"  value=""  name="description" rows="4" cols="50"></textarea>
+                                
+                                </div>
+                              </div>
+                              
+                              
+                             
+                              <div class="col-12 d-grid">
+                                <a href="/latest" class="btn btn-warning">Cancel</a>
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                              </div>
+                          </form>
+                         
+                    </thead>
+                    
+                  </table>
+            </div>
+            
+              
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Super FabLab 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+   
+
+    <!-- Logout Modal-->
+  
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/admin_assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/admin_assets/js/sb-admin-2.min.js"></script>
+
+   
+
+</body>
+
+</html>

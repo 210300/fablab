@@ -45,6 +45,10 @@ const userSchema = new mongoose.Schema({
     userType: {
         type:String,
         required: true,
+    },
+    isChecked:{
+        type: Boolean,
+        default: false,
     }
 });
 

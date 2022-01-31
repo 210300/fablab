@@ -1,6 +1,6 @@
 .dh-header-non-rectangular-container h1, p {
-  color: white;
-  font-weight: bold;
+  color: rgb(8, 1, 1);
+  /*font-weight: bold;*/
 }
 
 .clearmargin {
@@ -16,10 +16,10 @@
 }
 
 .row-image-txt h1 {
-  color: white;
+  color: black;
 }
 
 .row-image-txt p {
-  color: white;
+  color: grey;
 }
 

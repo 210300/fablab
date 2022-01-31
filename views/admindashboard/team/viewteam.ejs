@@ -1,0 +1,102 @@
+<%- include('../partials/header.ejs')  %>
+                <!-- End of Topbar -->
+                <div class="row mb-3" style="margin-left: 10px;">
+                    <a href="add-member" class="btn btn-success d-flex-left align-items-center"><i
+                            class="material-icons mr-2"></i>Add New Member</a>
+                </div>
+        
+                <table class="table table-bordered" style="margin-left: 10px; padding-right: 10px; width: 95%;">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Machine Allocated</th>
+                                             
+                        <th scope="col" class="text-end">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                  
+                        <% if(result.length){
+ 
+                            for(var i = 0; i< result.length; i++) {%>  
+                            <tr>
+                              <th scope="row"><%= (i+1) %></th>
+                              <td><%= result[i].name %></td>
+                              <td><%= result[i].email %></td>
+                              <td><%= result[i].machine %></td>
+                              <td>
+                                
+                                <a href="" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>
+                                  Edit</a>
+                                <a href="" type="button" class="btn btn-light btn-small"><i class="bi bi-person-x"></i> Delete</a>                                       
+                             
+                            </td>
+                            <% }
+                                     
+                             }else{ %>
+                                 
+                                    <td colspan="5">No Member found</td>
+                                 
+                              <% } %>
+                            </tr>
+                             
+                            
+                    </tbody>
+                  </table>
+            </div>
+            
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Super FabLab 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+   
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="team-logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/admin_assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/admin_assets/js/sb-admin-2.min.js"></script>
+
+
+
+</body>
+
+</html>

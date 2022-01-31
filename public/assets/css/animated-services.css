@@ -1,5 +1,5 @@
 .services .icon-box {
-  padding: 60px 30px;
+  padding: 20px 15px;
   position: relative;
   overflow: hidden;
   background: #fff;
@@ -8,12 +8,13 @@
   border-radius: 8px;
   z-index: 1;
   text-align: center;
+  border-radius: 40px;
 }
 
 .services .icon-box::before {
   content: '';
   position: absolute;
-  background: #fdeff2;
+  /*background: #fdeff2;*/
   right: 0;
   left: 0;
   bottom: 0;
@@ -23,7 +24,7 @@
 }
 
 .services .icon-box:hover::before {
-  background: #e43c5c;
+  /*background: #f7dc49;*/
   top: 0;
   border-radius: 0px;
 }
@@ -35,12 +36,12 @@
 .services .icon i {
   font-size: 48px;
   line-height: 1;
-  color: #e43c5c;
+  color: #f7dc49;
   transition: all 0.3s ease-in-out;
 }
 
 .services .title {
-  font-weight: 700;
+  /*font-weight: 700;*/
   margin-bottom: 15px;
   font-size: 18px;
 }
@@ -50,20 +51,22 @@
 }
 
 .services .description {
-  font-size: 15px;
-  line-height: 28px;
+  font-size: 13.6px;
+  line-height: 15.7px;
   margin-bottom: 0;
+  font-family: bell;
+  text-align: justify;
 }
 
 .services .icon-box:hover .title a, .services .icon-box:hover .description {
-  color: #fff;
+  color: black;
 }
 
-.services {
+/*.services {
   padding-bottom: 30px;
-}
+}*/
 
 .services .icon-box:hover .icon i {
-  color: #fff;
+  color: #3b70b4;
 }
 

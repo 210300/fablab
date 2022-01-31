@@ -1,0 +1,94 @@
+.modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	opacity: .5;
+	visibility: hidden;
+	
+}
+.modal-box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #B4DFE0;
+	padding: 1rem 1.5rem;
+	width: 24rem;
+	border-radius: 0.5rem;
+	box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.show-modal {
+	opacity: 1;
+	visibility: visible;
+	transform: scale(1.0);
+}
+.btn-red {
+	background-color: #DD5742;
+}
+
+
+
+.active, .eqmt:hover{
+	background-color: orange;
+	color:#3b70b4;
+
+}
+
+
+
+table {
+	margin: 5% auto;
+	border: 2px solid #3b70b4;
+	background-color: white;
+	
+}
+
+thead{
+	font-size: 11px;
+}
+tbody{
+
+	font-size: 9px;
+}
+th{
+	padding: 3px;
+	border: 2px solid #3b70b4;
+}
+td{
+	
+	border: 1px solid #3b70b4;
+
+}
+th, td{
+	height: 20%;
+	
+}
+td.pointer {
+	cursor: pointer;
+}
+td:hover {
+	background-color:#94F580;
+	
+}
+
+
+th img { display:none; 
+}
+th:hover img {
+display:block; 
+width: 100px;
+margin-left: 80px;
+margin-top: -5px;
+margin-bottom: 0px;
+width: 20%;
+border: 2px solid rgb(247, 120, 1);
+border-radius: 0 30px 30px 30px ;
+height: auto;
+position: absolute;
+z-index: 2;
+box-shadow: rgba(248, 149, 1, 0.966) 0px 2px 6px, rgba(248, 149, 1, 0.966) 0px 4px 2px, rgba(248, 149, 1, 0.966) 0px 8px 4px, rgba(248, 149, 1, 0.966) 0px 6px 8px, rgba(0, 0, 0, 0.09) 0px 2px 16px;
+}

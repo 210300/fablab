@@ -4,22 +4,20 @@
    <head>
       <meta charset="utf-8">
       <title>Login Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-      
       <style>
           @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
                 *{
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                font-family: 'Poppins', sans-serif;
+                font-family: bell;
                 }
                 html,body{
                 display: grid;
                 height: 100%;
                 width: 100%;
                 place-items: center;
-                background-image: url(img/b3.jpg);
+                background-image: url(assets/img/b3.jpg);
                 /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
                 }
                 ::selection{
@@ -29,7 +27,6 @@
                 .wrapper{
                 width: 380px;
                 background: #fff;
-                border: 1px solid black;
                 /* border-radius: 15px; */
                /* box-shadow: 5px 15px 18px #f37b53;*/
                 }
@@ -37,11 +34,11 @@
                 font-size: 35px;
                 font-weight: 600;
                 text-align: center;
-                line-height: 100px;
+                
                 color: #000;
                 user-select: none;
                 /* border-radius: 15px 15px 0 0; */
-                background: lightgray;
+                background: #fff;
                 }
                 .wrapper form{
                 padding: 10px 30px 50px 30px;
@@ -113,15 +110,16 @@
                 color: "";
                 }
                 form .field input[type="submit"]{
-                color: #000;
-                border: none;
+                /*color: #000;*/
+                border: 3px solid orange;
                 padding-left: 0;
                 margin-top: -10px;
                 font-size: 18px;
                 font-weight: 500;
                 cursor: pointer;
-                background: #ccc;
+                background: #fff;
                 transition: all 0.3s ease;
+                border-radius: 40px;
                 }
                 form .field input[type="submit"]:active{
                 transform: scale(0.95);
@@ -129,11 +127,13 @@
                 form .field input[type="submit"]:hover{
                     border: 2px solid orange;
                     background-color: orange;
+                    color: #fff;
                 }
                 form .signup-link{
                 color: #262626;
                 margin-top: 20px;
                 text-align: center;
+                text-decoration: none;
                 }
                 form .pass-link a,
                 form .signup-link a{
@@ -147,11 +147,12 @@
       </style>
    </head>
    <body>
-      <div class="wrapper">
+
+      <div class="wrapper" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 40px;">
+         <div class="title" style="border-radius: 40px;">
+            <img src="assets/img/logo.png" style="width: 120px; margin-top: 20px; height:125px;">
          
-         <div class="title">
-            Welcome
-         </div>
+        
          <div style="margin: 0 auto" class="col-12 col-md-12 customborder">
             <% if( error !="" ){ %>
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
@@ -168,9 +169,9 @@
                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
              </div>
              <% } %>
+            </div>
          <form action="/login" method="POST">
-          <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
-
+          
             <div class="field">
                <input type="email" required name="email" id="email">
                <label>Email Address</label>
@@ -193,9 +194,10 @@
                <input type="submit" value="Login" >
             </div>
             <div class="signup-link">
-               Not a member? <a href="/register">Sign up now</a>
-            </div>
+               <h6> Not a member? <a href="/register">Sign up now</a></h6>
+             </div>
          </form>
+         
       </div>
       <script>
          const rmCheck = document.getElementById("rememberMe"),

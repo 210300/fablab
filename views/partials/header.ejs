@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>SFL</title>
-<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <title>Super Fab Lab</title>
+    
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Image-Grid-Sunday.css">
+
     <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Fixed-navbar-starting-with-transparency-1.css">
-    <link rel="stylesheet" href="assets/css/Fixed-navbar-starting-with-transparency.css">
     <link rel="stylesheet" href="assets/css/--mp---Testimonials-Slider.css">
     <link rel="stylesheet" href="assets/css/animated-services.css">
     <link rel="stylesheet" href="assets/css/Animated-Testimomial-1.css">
@@ -25,6 +28,7 @@
     <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-74.css">
     <link rel="stylesheet" href="assets/css/Bootstrap-4---Full-Video-Background-v2.css">
     <link rel="stylesheet" href="assets/css/card-3-column-animation-shadows-images.css">
+    <link rel="stylesheet" href="assets/css/Card-hover-affect-2.css">
     <link rel="stylesheet" href="assets/css/dh-card-image-left-dark.css">
     <link rel="stylesheet" href="assets/css/dh-header-cover-image-button.css">
     <link rel="stylesheet" href="assets/css/dh-row-text-image-right-responsive.css">
@@ -45,55 +49,54 @@
     <link rel="stylesheet" href="assets/css/WOWSlider-about-us-1.css">
     <link rel="stylesheet" href="assets/css/WOWSlider-about-us-2.css">
     <link rel="stylesheet" href="assets/css/WOWSlider-about-us.css">
+    <link rel="stylesheet" href="assets/css/Effective-Pricing-Cards.css">
+    <link rel="stylesheet" href="assets/css/featured-products-slider-1.css">
+    <link rel="stylesheet" href="assets/css/featured-products-slider.css">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    
+<body>  
 
-         <div class="collapse navbar-collapse" id="navcol-1">
-        <ul class="nav nav-tabs ms-auto">
-            <li class="nav-item"><a class="nav-link" href="#">First Item</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Second Item</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Third Item</a></li>
-            <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Dropdown </a>
-                <div class="dropdown-menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-            </li>
-        </ul>
-    </div>
-    <nav class="navbar navbar-light navbar-expand-md fixed-top navbar-transparency" style="background: #ced4da; height: 70px;">
-        <div class="container">
-            <div><a class="navbar-brand" href="/"><img id="logo" src="assets/img/fablab.png" style="transform: translate(-5px) scale(1.31);"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button></div>
-            <div class="collapse navbar-collapse" id="navcol-2">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
-                 
-                    <li class="nav-item"></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="machine">MACHINES&nbsp;</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="/machine">ABOUT MACHINES</a><a class="dropdown-item" href="machine">BOOKINGS</a></div>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button fixed-top navbar-transparency" style=" font-family: bell; font-size: 18px;">
+        <div class="container"><img id="logo" src="assets/img/logo.png" height="70px" style="padding-right: 4rem;"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="machine">Machines</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="machine">Carpentry lab</a><a class="dropdown-item" href="electronic">Electronic lab</a><a class="dropdown-item" href="heaveymachine">Heavy machinary lab</a><a class="dropdown-item" href="metal">Metal work lab</a><a class="dropdown-item" href="frontbooking">Booking</a></div>
                     </li>
-                    <li class="nav-item dropdown" style="opacity: 1;"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="program">PROGRAMS&nbsp;</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="program">TRAINING</a><a class="dropdown-item" href="program">EDUCATION</a><a class="dropdown-item" href="program.html">COMMERCIAL</a><a class="dropdown-item" href="program.html">RESEARCH</a></div>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="program">Programs </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="program">Education program</a><a class="dropdown-item" href="trainingprogram">Training program</a><a class="dropdown-item" href="research">Research and Development</a></div>
                     </li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="service">SERVICES</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="service">INCUBATION</a><a class="dropdown-item" href="service">PROTOTYPING</a><a class="dropdown-item" href="service.html">CONSULTANCY</a><a class="dropdown-item" href="service.html">INSTALLATION</a><a class="dropdown-item" href="service.html">MACHINING</a></div>
+
+                    <li class="nav-item"><a class="nav-link" href="service">Services</a>
+
+                    <li class="nav-item"><a class="nav-link" href="newsandevents">News And Events</a>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="about">About us</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="about">The story of sfl</a><a class="dropdown-item" href="about">Meet the team</a><a class="dropdown-item" href="about">Virtual tour</a><a class="dropdown-item" href="gallery">Gallery</a></div>
                     </li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="resource">RESOURCES</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="resource">TRAINING</a><a class="dropdown-item" href="resource">TUTORIALS</a><a class="dropdown-item" href="resource.html">SOPS</a><a class="dropdown-item" href="resource.html">MACHINE MANVALS</a></div>
-                    </li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="about">ABOUT US</a>
-                        <div class="dropdown-menu"><a class="dropdown-item" href="about">THE STORY OF SFL</a><a class="dropdown-item" href="about">MEET THE TEAM</a><a class="dropdown-item" href="about.html">VIRTUAL TOUR</a><a class="dropdown-item" href="about.html">MEMBERSHIP</a><a class="dropdown-item" href="about.html">GALLERY</a></div>
-                    </li>
-                    <li>
                    
-                        <% if(logged){ %>
-                            <li class="nav-item">
-                              <a class="nav-link" href="/logout">Logout</a>
-                            </li>
-                            <% }else{ %>
-                              <li class="nav-item">
-                                <a class="nav-link" href="/login">Login</a>
-                              </li>
-                              
-                              <% } %>
-                </ul>
-            
+
+                </ul><span class="navbar-text actions">
+                    <% if(logged){ %>
+                            
+                        <a class="nav-link" href="/logout">Logout</a>
+                      
+                      <% }else{ %>
+                        <a href="login" class="joinbtn" style="color: black; border: 3px solid orange; background-color: #fff; width: 12%; height: 38px; border-radius: 50px; text-align: center; padding-top: 4px;">Login</a>
+                        
+                        <% } %>
+
+                </span>
+            </div>
+                                    
+                        
+
         </div>
     </nav>
-
-</html>

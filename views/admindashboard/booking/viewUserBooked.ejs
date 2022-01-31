@@ -1,0 +1,93 @@
+<%- include('../partials/header.ejs')  %>
+               
+                <table class="table table-bordered" style="margin-left: 10px; width: 95%;">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Day</th>
+                        <th scope="col">User</th>
+                        <th scope="col" class="text-end">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                  
+                        <% if(result.length){
+ 
+                            for(var u = 0; u< result.length; u++) {%>  
+                            <tr>
+                              <th scope="row"><%= (u+1) %></th>
+                              <td><%= result[u].Date %></td>
+                              <td><%= result[u].Day %></td>                          
+                              <td><%= result[u].user %></td>
+                              <td>
+                                  <a href="remove/<%= result[u].id %>" type="button" class="btn btn-light btn-small"onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-person-x"></i> Delete</a>                                       
+                                                                          
+                             </td>
+                            </tr>
+                            <% }
+                                     
+                             }else{ %>
+                                 <tr>
+                                    <td colspan="3">No equipment booked</td>
+                                 </tr>
+                              <% } %> 
+                  
+                    </tbody>
+                  </table>
+         
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Super FabLab 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="team-logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/admin_assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="assets/admin_assets/js/sb-admin-2.min.js"></script>
+
+
+
+</body>
+
+</html>

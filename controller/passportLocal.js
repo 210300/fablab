@@ -17,19 +17,21 @@ module.exports = function (passport) {
                     return done(null, false, { message: "Password Doesn't match !" });
                 }
                 if (match) {
-                    return done(null, data);
+                    return done(null, data, {data:match});
                 }
             })
         })
     }));
-
+   
     passport.serializeUser(function (user, done) {
         done(null, user.id);
     });
 
     passport.deserializeUser(function (id, done) {
-        user.findById(id, function (err, user) {
-            done(err, user);
+        user.findById(id,function (err, team) {
+            
+            done(err, team);
+        
         });
     });
 

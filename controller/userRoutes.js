@@ -71,7 +71,7 @@ router.get('/user/forgot-password', async (req, res) => {
     // render reset password page 
     // not checking if user is authenticated 
     // so that you can use as an option to change password too
-    res.render('forgot-password.ejs', { csrfToken: req.csrfToken() });
+    res.render('forgot-password.ejs');
 
 });
 
@@ -84,7 +84,7 @@ router.post('/user/forgot-password', async (req, res) => {
     if (userData) {
         if (userData.provider == 'google') {
             // type is for bootstrap alert types
-            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "User exists with Google account. Try resetting your google account password or logging using it.", type: 'danger' });
+            res.render('forgot-password.ejs', {  msg: "User exists with Google account. Try resetting your google account password or logging using it.", type: 'danger' });
         } else {
             // user exists and is not with google
             // generate token
@@ -94,10 +94,10 @@ router.post('/user/forgot-password', async (req, res) => {
             // send an email for verification
             mailer.sendResetEmail(email, token);
 
-            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "Reset email sent. Check your email for more info.", type: 'success' });
+            res.render('forgot-password.ejs', {  msg: "Reset email sent. Check your email for more info.", type: 'success' });
         }
     } else {
-        res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "No user Exists with this email.", type: 'danger' });
+        res.render('forgot-password.ejs', { msg: "No user Exists with this email.", type: 'danger' });
 
     }
 });
@@ -114,9 +114,9 @@ router.get('/user/reset-password', async (req, res) => {
             // send forgot-password page with reset to true
             // this will render the form to reset password
             // sending token too to grab email later
-            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), reset: true, email: check.email });
+            res.render('forgot-password.ejs', {  reset: true, email: check.email });
         } else {
-            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), msg: "Token Tampered or Expired.", type: 'danger' });
+            res.render('forgot-password.ejs', { msg: "Token Tampered or Expired.", type: 'danger' });
         }
     } else {
         // doesnt have a token
@@ -133,7 +133,7 @@ router.post('/user/reset-password', async (req, res) => {
     console.log(password);
     console.log(password2);
     if (!password || !password2 || (password2 != password)) {
-        res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), reset: true, err: "Passwords Don't Match !", email: email });
+        res.render('forgot-password.ejs', {  reset: true, err: "Passwords Don't Match !", email: email });
     } else {
         // encrypt the password
         var salt = await bcryptjs.genSalt(12);
@@ -142,7 +142,7 @@ router.post('/user/reset-password', async (req, res) => {
             await user.findOneAndUpdate({ email: email }, { $set: { password: hash } });
             res.redirect('/login');
         } else {
-            res.render('forgot-password.ejs', { csrfToken: req.csrfToken(), reset: true, err: "Unexpected Error Try Again", email: email });
+            res.render('forgot-password.ejs', { reset: true, err: "Unexpected Error Try Again", email: email });
 
         }
     }

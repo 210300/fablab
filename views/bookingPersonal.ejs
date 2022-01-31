@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SFL</title> 
+    <link rel="stylesheet" href="assets/bootstrap/css/fonts-googleapis-com-css-family-Cookie.css">
+    <base href='/'>
+      
+    <link rel="stylesheet" href="booking/bootstrap/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+   
+    <link href="assets/admin_assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+   
+
+    <link href="assets/admin_assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="assets/admin_assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+   <style>
+       th, td,tr,tbody{
+           border: 2px solid #3b70b4;
+       }
+   </style>
+    
+  </head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button fixed-top navbar-transparency" style=" font-family: bell; font-size: 18px;">
+        <div class="container"><img id="logo" src="assets/img/logo.png" height="70px" style="padding-right: 4rem;"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="machine">Machines</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="machine">Carpentry lab</a><a class="dropdown-item" href="electronic">Electronic lab</a><a class="dropdown-item" href="heaveymachine">Heavy machinary lab</a><a class="dropdown-item" href="metal">Metal work lab</a><a class="dropdown-item" href="/booking">Booking</a></div>
+                    </li>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="program">Programs </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="program">Education program</a><a class="dropdown-item" href="trainingprogram">Training program</a><a class="dropdown-item" href="research">Research and Development</a></div>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="service">Services</a>
+
+                    <li class="nav-item"><a class="nav-link" href="newsandevents">News And Events</a>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="about">About us</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="about">The story of sfl</a><a class="dropdown-item" href="about">Meet the team</a><a class="dropdown-item" href="about">Virtual tour</a><a class="dropdown-item" href="gallery">Gallery</a></div>
+                    </li>
+                   
+
+                </ul>
+            </div>
+        </div>
+   
+        <div class=" fixed-right ">
+        	
+        	<ul class="navbar-nav mx-auto">
+        		<li class="nav-item dropdown">
+        			<a href="#" class="joinbtn dropdown-toggle nav-link " id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-expanded="false" data-bs-toggle="dropdown">
+                        <span><%= username%></span>
+        				<img class="img-profile rounded-circle "  style="height: 30px;" src="assets/admin_assets/img/undraw_profile.svg">
+                    </a>                        
+                    <div class="dropdown-menu mx-0 shadow mt-0">
+                        <a class="dropdown-item" href="/profile">Profile</a>
+                        <a class="dropdown-item" href="/yourBooking">Booking</a>
+                        <a class="dropdown-item" href="/logout" data-target="#logoutModal">Logout</a>
+                    </div>
+                </li>
+               
+        	</ul>
+        </div>
+
+    </nav>	
+    <br><br><br><br><br>
+   <a href="/booking"><button class="btn btn-warning ml-3">back</button></a><br><br>
+   
+   <div class="jumbotron container">
+                <table class="table" style="margin-left: 10px; padding-right: 10px; width: 95%; font-family: bell; color: black; font-size: 18px;">
+                    <thead class="thead" style="background-color: #3b70b4; color: white; " >
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Equipment</th>
+                        <th scope="col">Time</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody >
+                  
+                        <% if(data.length){
+ 
+                            for(var i = 0; i< data.length; i++) {%>  
+                            <tr>
+                              <th scope="row"><%= (i+1) %></th>
+                              <td><%= data[i].date %></td>
+                              <td><%= data[i].equipment %></td>
+                              <td><%= data[i].times %></td>
+                             
+                            </tr>
+                            <% }
+                                     
+                             }else{ %>
+                                 <tr>
+                                    <td colspan="3">No project found</td>
+                                 </tr>
+                              <% } %> 
+                  
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+    <%- include('partials/footer.ejs')  %>
+            
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+   
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="team-logout">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/admin_assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/admin_assets/js/sb-admin-2.min.js"></script>
+
+
+
+</body>
+
+</html>

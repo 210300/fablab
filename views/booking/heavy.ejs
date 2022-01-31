@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>SFL</title> 
+    <link rel="stylesheet" href="assets/bootstrap/css/fonts-googleapis-com-css-family-Cookie.css">
+    <base href='/'>
+      
+    <link rel="stylesheet" href="booking/bootstrap/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+   
+    <link href="assets/admin_assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+   
+
+    <link rel="stylesheet" href="booking/css/main.css">
+    <link rel="stylesheet" href="/booking/css/table.css">
+    <link rel="stylesheet" href="/booking/css/joinusModal.css">
+    <script src="booking/js/jquery-min.js"></script>
+    <script src="booking/js/date.js"></script>
+    <script src="booking/js/confirmation-popup.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <style>
+        .msg{
+            display: none;
+        }
+        .subbtn:hover{
+            background-color: orange;
+        }
+        .subbtn{
+            border-radius: 17px;
+            width: 20%;
+            
+        }
+    </style>
+    
+  </head>
+
+<body>
+
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button fixed-top navbar-transparency" style=" font-family: bell; font-size: 18px;">
+        <div class="container"><img id="logo" src="assets/img/logo.png" height="70px" style="padding-right: 4rem;"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="machine">Machines</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="machine">Carpentry lab</a><a class="dropdown-item" href="electronic">Electronic lab</a><a class="dropdown-item" href="heaveymachine">Heavy machinary lab</a><a class="dropdown-item" href="metal">Metal work lab</a><a class="dropdown-item" href="booking">Booking</a></div>
+                    </li>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="program">Programs </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="program">Education program</a><a class="dropdown-item" href="trainingprogram">Training program</a><a class="dropdown-item" href="research">Research and Development</a></div>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="service">Services</a>
+
+                    <li class="nav-item"><a class="nav-link" href="newsandevents">News And Events</a>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="about">About us</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="about">The story of sfl</a><a class="dropdown-item" href="about">Meet the team</a><a class="dropdown-item" href="about">Virtual tour</a><a class="dropdown-item" href="gallery">Gallery</a></div>
+                    </li>
+                   
+
+                </ul>
+            </div>
+        </div>
+   
+        <div class=" fixed-right ">
+        	
+        	<ul class="navbar-nav mx-auto">
+        		<li class="nav-item dropdown">
+        			<a href="#" class="joinbtn dropdown-toggle nav-link " id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-expanded="false" data-bs-toggle="dropdown">
+                        <span><%= username%></span>
+        				<img class="img-profile rounded-circle "  style="height: 30px;" src="assets/admin_assets/img/undraw_profile.svg">
+                    </a>                        
+                    <div class="dropdown-menu mx-0 shadow mt-0">
+                        <a class="dropdown-item" href="carpentarylab.html">Profile</a>
+                        <a class="dropdown-item" href="/logout" data-target="#logoutModal">Logout</a>
+                    </div>
+                </li>
+               
+        	</ul>
+        </div>
+
+    </nav>	
+   
+    <div class="row mt-5 width-100" style="font-family: bell;">
+    	<div class="navbar navbar-expand navbar-light justify-content-center topbar mt-4 mb-4 static-top shadow" style="color: white; background-color: #3b70b4;">
+    		<h1 class="h3 mb-0 py-3 ">Heavy Machinary Lab</h1>
+    	</div>
+    </div>
+
+	 	
+	<div class="container-fluid" style="font-family: bell;">
+		<%- include('partials/footer.ejs')%>
+    </div>			 	
+        <div class="row ">
+            <div class="col-9 px-4" >
+                <div class="container-fluid">
+                        <div class="row">
+                            <div>
+                                <p style="color: black;">Select a Date:  <input type="date" id="dateControl" style="border:2px solid #254876; border-radius: 5px;"/></p>
+                                
+                            </div>
+                            
+                            
+                        </div>
+                        <div class="row mt-4">
+                            <table id="table" >
+                                <thead>
+                                    <tr>
+                                    
+                                        <th style=" font-size: 12px; color: #f17b59"><strong>Equipments</strong></th>
+                                        <th class="th" align="center">09:00</th>
+                                        <th class="th" align="center">09:30</th>
+                                        <th class="th" align="center">10:00</th>
+                                        <th class="th" align="center">10:30</th>
+                                        <th class="th" align="center">11:00</th>
+                                        <th class="th" align="center">11:30</th>
+                                        <th class="th" align="center">12:00</th>
+                                        <th class="th" align="center">12:30</th>
+                                        <th class="th" align="center">13:00</th>
+                                        <th class="th" align="center">13:30</th>
+                                        <th class="th" align="center">14:00</th>
+                                        <th class="th" align="center">14:30</th>
+                                        <th class="th" align="center">15:00</th>
+                                        <th class="th" align="center">15:30</th>
+                                        <th class="th" align="center">16:00</th>
+                                        <th class="th" align="center">16:30</th>
+                                        
+                                    </tr>
+                                </thead>
+                        
+                                <tbody id="info"> 
+                                    <% if(resl.length){
+ 
+                                        for(var u = 0; u< resl.length; u++) {%>                                  
+                                    <tr id="1">
+                                       
+                                        <th class="thumbnail"> <%= resl[u].equipmentName %><img src="/imageEquipments/<%= resl[u].image %>" /></th>
+                                        <td class="0" id="10" ></td>                        
+                                        <td class="1" id="11" ></td>
+                                        <td class="2" id="12" ></td>
+                                        <td class="3" id="13" ></td>
+                                        <td class="4" id="14" ></td>
+                                        <td class="5" id="15" ></td>
+                                        <td class="6" id="17" ></td>
+                                        <td class="7" id="18" ></td>
+                                        <td class="8" id="19" ></td>
+                                        <td class="9" id="110" ></td>
+                                        <td class="10" id="111" ></td>
+                                        <td class="11" id="112" ></td>
+                                        <td class="12" id="113" ></td>
+                                        <td class="13" id="114" ></td>
+                                        <td class="14" id="115" ></td>
+                                        <td class="15" id="116" ></td>        
+                                                    
+                                    </tr>                                           
+                                    <% }
+                                     
+                                }else{ %>
+                                    <tr>
+                                       <td colspan="3">No Equipment found</td>
+                                    </tr>
+                                 <% } %>  
+                                </tbody> 
+                                
+                            </table>                        
+                        </div>
+                        <div class="modal" >
+                            <div class="modal-box">
+                                <h6>Do you want to book </h6>	        
+                                <div >
+                                    <input type="text" value="num" name="equipmentName" disabled="" style="background-color: #B4DFE0; border: none; width: 30%; padding-left: 3px; color: black;"> on
+                                    <input type="text"  name="timeValue" disabled="" style="background-color: #B4DFE0; border: none; width: 35%; padding-left: 3px; color: black;">
+                                    <p id="dateValue"></p>
+                                </div>
+                                <button onClick="window.location.reload();" id="btn-yes" class="btn-yes" style=" border-radius: 10px; background-color: #03E08B; width: 15%; float: left; border: none; color: black">Yes </button>
+                                <button  onClick="window.location.reload();" id="btn-no" class="btn-no" style=" border-radius: 10px; background-color: #DA452D; width: 17%; float: right; border: none; color: black">Cancel</button>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+            <div class="col-3 ">
+                <%- include('partials/header.ejs')  %>
+                <div class="mt-4">
+                    <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" >
+                        <div class="row py-3 text-center">
+                            <h5 class="h5 mb-0 text-gray-900 ">Select Machine Lab</h5>
+                        </div>
+            
+                        <div style="background: linear-gradient(to bottom, #3b70b4 100%, #2d658a 100%); border-radius: 15px; ">
+                            
+                        
+                            <div class="eqmt text-center border-bottom " style="border-radius: 15px 15px 0 0; ">
+                                <li class="mt-0 ">
+                                <a class="nav-link text-white" href="/carpentary"><span>Carpentary Lab</span></a>
+                                </li>
+                            </div>
+                            
+                            <div class="eqmt text-center border-bottom">
+                                <li class="mt-0">
+                                <a class="nav-link text-white" href="/booking"><span>Electronic Lab</span></a>
+                                </li>
+                            </div>
+                            
+                            <div class="eqmt text-center border-bottom active" >
+                                <li class="mt-0 ">
+                                <a class="nav-link text-white" href="/heavy"><span>Heavy Machinary Lab</span></a>
+                                </li>
+                            </div>
+            
+                            <div class="eqmt text-center border-bottom" style="border-radius:  0 0 15px 15px;">
+                                <li class="mt-0 ">
+                                <a class="nav-link text-white" href="/metalinfo"><span>Metal Lab</span></a>
+                                </li>
+                            </div>
+                                      
+                        </div>
+                        <div class="row py-4 text-center">
+                            <button type="button" onclick="document.getElementById('id01').style.display='block'" class="button btn mx-5 btn-outline-warning border-3"style="width: 75%; border-radius: 35px;">Enroll For Induction Training</button>
+                        </div> 
+                        
+                    </ul>   
+                </div>
+                </div>
+
+            
+        </div>
+    </div>	
+    
+
+    <footer>
+        <div class="row">
+            <div class="col-sm-6 col-md-4 footer-navigation">
+                <img src="assets/img/dhi.png" style="width: 155px; height: 120px;"><br><br>
+               <p>Druk Holdings & Investments Limited</p>
+                
+            </div>
+            <div class="col-sm-6 col-md-4 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                    <p><span class="new-line-span">Thimphu, Bhutan</span> Tech Park</p>
+                </div>
+                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                    <p class="footer-center-info email text-start">+975-2-336257/8</p>
+                </div>
+                <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                    <p> <a href="#" target="_blank">DHI, drive@gmail.com</a></p>
+                </div>
+            </div>
+            <div class="col-md-4 footer-about">
+                <h4>We'd love to hear from you!</h4>
+                <p> NRDCL is owned by Druk Holding and Investments (DHI), which is a 100% Government owned Investment Company.</p><br>
+                <a href="about.html" class="joinbtn" style="color: #fff;">Stay Tuned</a>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+        <hr style="width: 100%; height: 3px; ">
+        <div class="row text-center">
+            <p class="company-name">© Copyright 2022 DHI InnoTech. All rights reserved</p>
+        </div>
+    </footer>
+ 
+     <script src="assets/bootstrap/js/bootstrap.min.js"></script>  
+     <script src="booking/js/jquery-datepicker.js"></script>
+    <script src="booking/js/code.jquery.jquery-thusday.js"></script>
+    <script src="booking/js/code.jquery.jquery-friday.js"></script>
+    <script>
+        function disableHoliday(date) {
+    var string = $.datepicker.formatDate('yy-mm-dd', date);
+          
+    var filterDate = new Date(string);
+    var day = filterDate.getDay();
+    let x = [day != 0 && day !=1 && day !=2 && day !=3 && day !=5 && day !=6];
+   
+    return x;
+    
+ }
+        
+ $( "#datepicker" ).datepicker({
+
+    beforeShowDay: disableHoliday
+ });
+ function disableHolidays(date) {
+    var string = $.datepickers.formatDate('yy-mm-dd', date);
+          
+    var filterDate = new Date(string);
+    var day = filterDate.getDay();
+    let x = [day != 0 && day !=1 && day !=2 && day !=3 && day !=4 && day !=6];
+   
+    return x;
+    
+ }
+        
+ $( "#datepickers" ).datepickers({
+
+    beforeShowDay: disableHolidays
+ });
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('input[type="radio"]').click(function(){
+            var val = $(this).attr("value");
+            var target = $("." + val);
+            $(".msg").not(target).hide();
+            $(target).show();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<%- include('partials/header.ejs')  %>
+                <div class="row mb-3" style="margin-left: 10px;">
+                    <a href="Events" class="btn btn-success d-flex-left align-items-center"><i
+                            class="material-icons mr-2"></i>Add News</a>
+                </div>
+        
+                <table class="table table-bordered" style="margin-left: 10px; padding-right: 10px; width: 95%;">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Time Created</th>                        
+                        <th scope="col" class="text-end">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                  
+                        <% if(data.length){
+ 
+                            for(var i = 0; i< data.length; i++) {%>  
+                            <tr>
+                              <th scope="row"><%= (i+1) %></th>
+                              <td><%= data[i].title %></td>
+                              <td><%= data[i].description %></td>
+                              <td><img src="/NewsandEvents/<%= data[i].image %>" alt="" style="height: 100px;width: 100px;"></td>
+                              <td><%= data[i].createdAt.toString().split('GMT+0530 (India Standard Time)') %></td>
+                              <td>
+                                
+                                <a href="" type="button" class="btn btn-light btn-small"><i class="bi bi-pencil"></i>
+                                  Edit</a>
+                                <a href="/undo/<%= data[i].id%>" type="button" class="btn btn-light btn-small" onClick="return confirm('Are you sure you want to delete?')"><i class="bi bi-person-x"></i> Delete</a>                                       
+                             
+                            </td>
+                            </tr>
+                            <% }
+                                     
+                             }else{ %>
+                                 <tr>
+                                    <td colspan="3">No project found</td>
+                                 </tr>
+                              <% } %> 
+                  
+                    </tbody>
+                  </table>
+            </div>
+            
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Super FabLab 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+   
+
+    
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/admin_assets/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/admin_assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/admin_assets/js/sb-admin-2.min.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,39 +1,67 @@
 .box {
   position: relative;
   overflow: hidden;
-  box-shadow: 0 0 5px #555;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .box img {
   width: 100%;
   height: auto;
+  border-radius: 40px;
 }
 
-.box .box-heading {
+.box .box-heading1 {
   width: 90%;
   position: absolute;
   bottom: 25px;
   left: 5%;
-  background: rgba(80, 230, 0,0.8);
-  padding: 10px 60px 10px 25px;
+  background: #f7dc49;
+/*  background: rgba(80, 230, 0,0.8);
+*/  padding: 10px 60px 10px 25px;
   color: #fff;
   transition: all 0.3s ease 0s;
 }
 
+.box .box-heading2 {
+  width: 90%;
+  position: absolute;
+  bottom: 25px;
+  left: 5%;
+  background: #f17b59;
+/*  background: rgba(80, 230, 0,0.8);
+*/  padding: 10px 60px 10px 25px;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
+.box:hover .box-heading {
+  left: 100%;
+}
+
+.box .box-heading3 {
+  width: 90%;
+  position: absolute;
+  bottom: 25px;
+  left: 5%;
+  background: #3b70b4;
+/*  background: rgba(80, 230, 0,0.8);
+*/  padding: 10px 60px 10px 25px;
+  color: #fff;
+  transition: all 0.3s ease 0s;
+}
 .box:hover .box-heading {
   left: 100%;
 }
 
 .box .box-heading:after {
   content: "\f105";
-  font-family: fontawesome;
+  font-family: bell;
   width: 40px;
   height: 40px;
   line-height: 40px;
   position: absolute;
   top: 13px;
   right: 11px;
-  background: #333;
+  background: #fff;
   font-size: 30px;
   color: #fff;
   text-align: center;
@@ -60,7 +88,8 @@
   top: 0;
   left: -100%;
   padding: 30px 35px;
-  background: rgba(80, 230, 0,0.8);
+  /*background: f17b59;
+*/  background: rgba(f17b59);
   transition: all 0.3s ease 0s;
 }
 

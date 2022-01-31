@@ -1,0 +1,29 @@
+a:active {
+  background: var(--indigo);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.blog .carousel-indicators {
+  left: 0;
+  top: auto;
+  bottom: -50px;
+}
+
+.blog .carousel-indicators li {
+  height: 10px !important;
+  border-radius: 10px !important;
+  width: 20px !important;
+  background-color: #0b2967;
+}
+
+.blog .carousel-indicators .active {
+  height: 10px !important;
+  border-radius: 10px !important;
+  width: 20px !important;
+  background-color: red;
+}
+
+div {
+}
+

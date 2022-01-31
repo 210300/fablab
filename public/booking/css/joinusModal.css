@@ -1,0 +1,128 @@
+
+   .Joinusmodal{
+      z-index:2;
+      display:none;
+      padding-top:100px;
+      position:fixed;
+      left:0;
+      top:0;
+      width:100%;
+      height:100%;
+      overflow:auto;
+      background-color:rgba(200, 202, 204, 0.8)
+    }
+
+    .Joinusmodal-content{
+      margin:auto;
+      background-color:rgb(248, 242, 242);
+      position:relative;
+      padding:0;
+      outline:0;
+      width:90%;
+    }
+    @media (max-width:600px){
+        .Joinusmodal-content{
+        margin:0 10px;
+        width:auto;
+        }
+        .Joinusmodal{
+        padding-top:30px;
+        color: black;
+        }
+        .dropdown-hover.mobile .dropdown-content,.dropdown-click.mobile .dropdown-content{
+        position:relative;
+        } 
+        .hide-small{
+        display:none!important;
+        }
+        .mobile{
+        display:block;
+        width:100%!important;
+        }
+        .bar-item.mobile,.dropdown-hover.mobile,.dropdown-click.mobile{
+            text-align:center
+        }
+        .dropdown-hover.mobile,.dropdown-hover.mobile .btn,.dropdown-hover.mobile .button,.dropdown-click.mobile,.dropdown-click.mobile .btn,.dropdown-click.mobile .button{
+        width:100%
+        }
+    }
+    @media (max-width:768px){
+        .Joinusmodal-content{
+        width:400px;
+        }
+        .Joinusmodal{
+        padding-top:50px;
+        }
+    }
+    @media (min-width:993px){
+        .Joinusmodal-content{
+        width:700px;
+        }
+        .hide-large{
+        display:none!important
+        }
+        .sidebar.collapse{
+        display:block!important
+        }
+    }
+
+
+
+
+/* join us calander css */
+
+.ui-datepicker, .ui-datepickers {
+    width: 14em;
+    border-radius: 15px;
+    padding: .2em .2em 0;
+    display: none;
+    background-color:whitesmoke;
+    border: 2px solid rgb(129, 127, 127);
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+    .ui-datepicker .ui-datepicker-header, .ui-datepickers .ui-datepickers-header {
+        position: relative;
+        padding: .2em 0;
+    }
+    .ui-datepicker .ui-datepicker-prev,
+    .ui-datepicker .ui-datepicker-next, 
+    .ui-datepickers .ui-datepickers-prev,
+    .ui-datepickers .ui-datepickers-next {
+        font-family: bell;
+        border: 1px solid orange;
+        border-radius: 7px;
+        position: absolute;
+        width: 20%;
+        padding-left: 4px;
+        cursor: pointer;
+        background-color:orange;
+        text-decoration: white;
+        height: 1.8em;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+}
+    
+    .ui-datepicker .ui-datepicker-prev,
+    .ui-datepickers .ui-datepickers-prev {
+        left: 7px;
+    }
+    .ui-datepicker .ui-datepicker-next,
+    .ui-datepickers .ui-datepickers-next {
+        right: 7px;
+    }
+    
+    
+    .ui-datepicker .ui-datepicker-title,
+    .ui-datepickers .ui-datepickers-title {
+        margin: 0 2.3em;
+        line-height: 1.8em;
+        text-align: center;
+    }
+    .ui-datepicker-next:hover, .ui-datepicker-prev:hover{
+        background-color: orange;
+    }

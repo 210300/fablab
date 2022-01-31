@@ -23,8 +23,8 @@
 }
 
 .card-text:last-child {
-  font-size: 30px;
-  color: #595959;
+  font-size: 18px;
+  color: black;
 }
 
 #cardheader-subtext {

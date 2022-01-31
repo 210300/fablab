@@ -1,98 +1,246 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i">
-    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
-    <link rel="stylesheet" href="assets/css/Fixed-navbar-starting-with-transparency-1.css">
-    <link rel="stylesheet" href="assets/css/Fixed-navbar-starting-with-transparency.css">
-    <link rel="stylesheet" href="assets/css/--mp---Testimonials-Slider.css">
-    <link rel="stylesheet" href="assets/css/animated-services.css">
-    <link rel="stylesheet" href="assets/css/Animated-Testimomial-1.css">
-    <link rel="stylesheet" href="assets/css/Animated-Testimomial.css">
-    <link rel="stylesheet" href="assets/css/Animation-Cards-1.css">
-    <link rel="stylesheet" href="assets/css/Animation-Cards.css">
-    <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-142-1.css">
-    <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-142.css">
-    <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-74-1.css">
-    <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-74.css">
-    <link rel="stylesheet" href="assets/css/Bootstrap-4---Full-Video-Background-v2.css">
-    <link rel="stylesheet" href="assets/css/card-3-column-animation-shadows-images.css">
-    <link rel="stylesheet" href="assets/css/dh-card-image-left-dark.css">
-    <link rel="stylesheet" href="assets/css/dh-header-cover-image-button.css">
-    <link rel="stylesheet" href="assets/css/dh-row-text-image-right-responsive.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
-    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Swiper-Slider-Card-For-Blog-Or-Product-1.css">
-    <link rel="stylesheet" href="assets/css/Swiper-Slider-Card-For-Blog-Or-Product.css">
-    <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
-    <link rel="stylesheet" href="assets/css/Team.css">
-    <link rel="stylesheet" href="assets/css/Testimonial-Slider-9-1.css">
-    <link rel="stylesheet" href="assets/css/Testimonial-Slider-9.css">
-    <link rel="stylesheet" href="assets/css/Ultimate-Testimonial-Slider.css">
+	<title>Registration</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/Vdeo.css">
-    <link rel="stylesheet" href="assets/css/WOWSlider-about-us-1.css">
-    <link rel="stylesheet" href="assets/css/WOWSlider-about-us-2.css">
-    <link rel="stylesheet" href="assets/css/WOWSlider-about-us.css">
-   
-</head>
-<body>
+	<style>
+		/* .box{
+			width: 200px;
+		} */
+        @import url('http://fonts.googleapis.com/css?family=Poppins');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+}
+.container-fluid
+{
+    width:1200px;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 5px;
+    margin: 0 auto;
+    text-align: center;
+} 
+.card{
+    border: 0px;
+}
+.container .card{
+    position: relative;
+    width:300px;
+    height:400px;
+    margin:0 auto;
+    background:#fff;
+    transition: 0.5s;
     
-       
-    </script>
-     <section id="services" class="services" >
-        <div class="container-md section-title">
-            <div class="text-center">
-                <h1 style="color: black;margin: 37px;padding: 19px;">Sign <span style="color: black;">&nbsp;Up</span></h1>
+} 
+.container .card:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; 
+   /* box-shadow: 0 30px 50px rgba(0,0,0,.2);*/
+}
+.container .card .face{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-fluid .card .face.face1{
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    background:#fff;
+    color: #000;
+    
+}
+.container .card .face.face1 h2{
+    margin-top: 60px;
+}
+    .container-fluid .card .face.face1 a{
+	text-decoration: none;
+	color: black;
+	background-color: transparent;
+	border-radius: 40px;
+	border: 3px solid orange;
+	padding: 6px 20px;
+	font-family: bell;
+    font-weight: 100;
+    font-size: 1rem;
+}
+.container-fluid .card .face.face1 a:hover{
+	background-color: orange;
+	color: white;
+}
+/* .container-fluid .card .face.face1 a:hover{
+    color:#fff;
+    background:#f37b53;
+} */
+.container .card .face.face2{
+    background-color: #f37b53;
+    transition:0.5s;
+}
+.container .card:hover .face.face2{
+    height:80px;
+    width:80px;
+    border-radius: 50%;
+    top:40px;
+    left:50%;
+    transform: translateX(-50%);
+    background:transparent;
+}
+.container .card .face.face2 h2{
+    margin:0;
+    padding:0;
+    font-size: 16px;
+    color:#fff;
+    transition:0.5s;
+}
+.container .card:hover .face.face2 h2{
+    color:#f37b53;
+    font-size: 16px;
+}
+.description{
+    font-size: 14px;
+    text-align: justify;
+    color: grey;
+    font-family: bell;
+    /*line-height: 1rem;*/
+    font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: #ddd;
+  color: black;
+  text-decoration: none;
+}
+
+.previous {
+  background-color: #04AA6D;
+  color: black;
+  text-decoration: none;
+  margin: 0px 20px 20px 0px;
+}
+/* .next {
+  background-color: #04AA6D;
+  color: white;
+  text-decoration: none;
+} */
+
+	</style>
+</head>
+    <body>
+        <div id="content-wrapper" class="d-flex flex-column">
+                <div id="content"> 
+                    <!-- <a href="index.html" class="previous" onclick="history.back()">&laquo; Previous</a> -->
+                    <!-- <a href="#" class="next" onclick="history.forward()">Next &raquo;</a> -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="box col-xl-3 col-md-6 mb-12">
+                                <div class="card border-left-primary shadow h-100 py-2" style="border-bottom: 3px solid #f37b53; border-radius: 40px;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">                                                                                  
+                                            <div class="h5 mb-12 font-weight-bold text-gray-800">
+                                                <div class="card">
+                                                    <div class="face face1">
+                                                    <div class="content">
+                                                        <h3 style="font-family: bell; font-size: 1.5rem;">SFL Youth</h3><hr>
+                                                        <p class="description" style="margin-bottom: 5rem;">SFL youth membership plans are for students.Student as young as a 5-year-old can join SFL but will need to be accompanied by their parents or teachers. Student above the age of 13 years can freely come to the lab and use the facilities. You will have access to all the basic machines and will also be provided with the proper training to use the machines.</p>
+                                                        <a href="signup" class="joinbtn">Sign up Now</a>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-xl-3 col-md-6 mb-12">
+                                <div class="card border-left-warning shadow h-100 py-2" style="border-bottom: 3px solid #f37b53; border-radius: 40px;">
+                                    <!-- <div class="h6 mb-12 font-weight-bold text-gray-800 offset-1">SFL Open</div> -->
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">                                                                                  
+                                            <div class="h5 mb-12 font-weight-bold text-gray-800">
+                                                <div class="card">
+                                                    <div class="face face1">
+                                                        <div class="content">
+                                                                <h3 style="font-family: bell; font-size: 1.5rem;">SFL Open</h3><hr>
+                                                                <p class="description" style="margin-bottom: 6rem;">SFL open membership plan is for anyone who just wants to learn. It is open for maker, hackers, and hobbyist. It is also open for families and friends to join.You will have access to all the basic machines and will also be provided with the proper training to use the machines. SFL team will always be there to help you. </p>
+                                                                <a href="community" class="joinbtn">Sign up Now</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="col-xl-3 col-md-6 mb-12">
+                                <div class="card border-left-primary shadow h-100 py-2" style="border-bottom: 3px solid #f37b53; border-radius: 40px;">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="h5 mb-12 font-weight-bold text-gray-800">
+                                                    <div class="card">
+                                                        <div class="face face1">
+                                                            <div class="content">
+                                                                <h3 style="font-family: bell; font-size: 1.5rem;">SFL Creator</h3><hr>
+                                                                <p class="description" style="margin-bottom: 4rem;">SFL Creator is for the Start-ups and entrepreneurs who have been looking for a place to prototype their ideas. SFL will provide you with a platform and a fabricating space for your product. SFL team will guide and help you to turn you into a marketable product. You will have access to most of the machines except for the ones with special training requirements.</p>
+                                                        
+                                                                <a href="startup" class="joinbtn">Sign up Now</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            <div class="col-xl-3 col-md-6 mb-12">
+                                <div class="card border-left-warning shadow h-100 py-2" style="border-bottom: 3px solid #f37b53; border-radius: 40px;"> 
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="h5 mb-12 font-weight-bold text-gray-800">
+                                                    <div class="card">
+                                                        <div class="face face1">
+                                                        <div class="content">
+                                                            <h3 style="font-family: bell;font-size: 1.5rem;">SFL Business</h3><hr>
+                                                            <p class="description" style="margin-bottom: 6rem;">SFL business is for Companies, agencies and state/government looking for a collaborative project or resources. SFL has a huge capacity in-term of machines, which can be used for research or prototyping. SFL business members will have access to all the resources available in the lab.</p>
+                                                            
+                                                            <a href="company" class="joinbtn">Sign up Now</a>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>     
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>              
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="row" >
-                <div class="col-9 text-center col-md-6  d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="text-center icon-box" style="box-shadow: 0px 0px 6px 1px rgb(136,134,134);">
-                        <div class="icon"><i class="fab fa-dribbble" style="margin-bottom: 15px;"></i>
-                            <h4 class="title">SFL for Students<a href="#"></a></h4>
-                            <p class="description">SFL youth membership plans are for students.Student as young as a 5-year-old can join SFL but will need to be accompanied by their parents or teachers. Student above the age of 13 years can freely come to the lab and use the facilities. You will have access to all the basic machines and will also be provided with the proper training to use the machines. SFL team will always be there to help you.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p><a href="/signup" class="joinbtn" style="color:black;">Sign Up Here</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-9 text-center col-md-6  d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="text-center icon-box" style="box-shadow: 0px 0px 6px 1px rgb(136,134,134);">
-                        <div class="icon"><i class="fab fa-renren" style="margin-bottom: 15px;"></i>
-                            <h4 class="title">Community<a href="#"></a></h4>
-                            <p class="description">SFL open membership plan is for anyone who just wants to learn. It is open for maker, hackers, and hobbyist. It is also open for families and friends to join.You will have access to all the basic machines and will also be provided with the proper training to use the machines. SFL team will always be there to help you.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p><a href="/community" class="joinbtn" style="color:black;">Sign Up here</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-9 text-center col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="text-center icon-box" style="box-shadow: 0px 0px 6px 1px rgb(136,134,134);margin-top:20px;">
-                        <div class="icon"><i class="fab fa-codepen" style="margin-bottom: 15px;"></i>
-                            <h4 class="title">Start up<a href="#"></a></h4>
-                            <p class="description">SFL Creator is for the Start-ups and entrepreneurs who have been looking for a place to prototype their ideas. SFL will provide you with a platform and a fabricating space for your product. SFL team will guide and help you to turn you into a marketable product. You will have access to most of the machines except for the ones with special training requirements. You will also get trained in the digital fabrication technology.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p><a href="/startup" class="joinbtn" style="color:black;">Sign Up Here</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-9 text-center col-md-6  d-flex align-items-stretch mb-5 mb-lg-0">
-                    <div class="text-center icon-box" style="box-shadow: 0px 0px 6px 1px rgb(136,134,134); margin-top:20px">
-                        <div class="icon"><i class="fab fa-codepen" style="margin-bottom: 15px;"></i>
-                            <h4 class="title">Business<a href="#"></a></h4>
-                            <p class="description">SFL business is for Companies, agencies and state/government looking for a collaborative project or resources. SFL has a huge capacity in-term of machines, which can be used for research or prototyping. SFL business members will have access to all the resources available in the lab and any type of support needed for their projects.<br>&nbsp; &nbsp; &nbsp;&nbsp;</p><a href="/company" class="joinbtn" style="color:black;">Read more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</body>
+    </body>
 </html>

@@ -345,7 +345,7 @@ router.get('/research', (req,res) =>{
         res.render("research", { logged: false });
     }
 })
-router.get('/newsandEvents', (req,res) =>{
+router.get('/announ', (req,res) =>{
     if (req.isAuthenticated()) {
         res.render("newsandevents", { logged: true });
     } else {

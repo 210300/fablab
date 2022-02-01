@@ -1,0 +1,72 @@
+{ 
+    "_id" : ObjectId("61f27360de0d9c2c38a9c9a4"), 
+    "equipmentName" : "FormLabs", 
+    "image" : "1643279200029FormLabs.png", 
+    "type" : "electronic", 
+    "timeCreated" : ISODate("2022-01-27T10:26:40.033+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f27369de0d9c2c38a9c9ae"), 
+    "equipmentName" : "3D Printer", 
+    "image" : "16432792094663D Scanner.png", 
+    "type" : "electronic", 
+    "timeCreated" : ISODate("2022-01-27T10:26:49.467+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f27381de0d9c2c38a9c9c3"), 
+    "equipmentName" : "Zund G3 Cutting Machine", 
+    "image" : "1643279233429zund.PNG", 
+    "type" : "heavyMachine", 
+    "timeCreated" : ISODate("2022-01-27T10:27:13.431+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f2739dde0d9c2c38a9c9cd"), 
+    "equipmentName" : "Wire EDM : Sodick VZ300L", 
+    "image" : "1643279261208300L.jfif", 
+    "type" : "heavyMachine", 
+    "timeCreated" : ISODate("2022-01-27T10:27:41.210+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f273aade0d9c2c38a9c9d7"), 
+    "equipmentName" : "Water Jet Cutter : Omax 5555", 
+    "image" : "1643279274441water.png", 
+    "type" : "heavyMachine", 
+    "timeCreated" : ISODate("2022-01-27T10:27:54.443+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f273bade0d9c2c38a9c9e5"), 
+    "equipmentName" : "Shaper", 
+    "image" : "1643279290941Shaper.png", 
+    "type" : "metal", 
+    "timeCreated" : ISODate("2022-01-27T10:28:10.943+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f273d8de0d9c2c38a9c9ef"), 
+    "equipmentName" : "Pneumatic Tapping AM", 
+    "image" : "1643279320545m10.PNG", 
+    "type" : "metal", 
+    "timeCreated" : ISODate("2022-01-27T10:28:40.547+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f273ebde0d9c2c38a9c9fd"), 
+    "equipmentName" : "Mechatronika M10 Pick and Place", 
+    "image" : "1643279339359m10.PNG", 
+    "type" : "carpentary", 
+    "timeCreated" : ISODate("2022-01-27T10:28:59.361+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f273f2de0d9c2c38a9ca07"), 
+    "equipmentName" : "Laser Cutter: Speedy 400", 
+    "image" : "1643279346618laser.PNG", 
+    "type" : "carpentary", 
+    "timeCreated" : ISODate("2022-01-27T10:29:06.622+0000"), 
+    "__v" : NumberInt(0)
+}

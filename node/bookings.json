@@ -1,0 +1,36 @@
+{ 
+    "_id" : ObjectId("61f3b1168f201f9e440df9a1"), 
+    "equipment" : "Wire EDM : Sodick VZ300L", 
+    "times" : "10:00", 
+    "date" : "2022-01-28", 
+    "row" : NumberInt(2), 
+    "col" : NumberInt(4), 
+    "user" : "karma.tshewang.bhutan@gmail.com", 
+    "createdAt" : ISODate("2022-01-28T09:02:14.346+0000"), 
+    "updatedAt" : ISODate("2022-01-28T09:02:14.346+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f3bfb5b1863cf571ca1954"), 
+    "equipment" : "Laser Cutter: Speedy 400", 
+    "times" : "10:30", 
+    "date" : "2022-01-28", 
+    "row" : NumberInt(2), 
+    "col" : NumberInt(5), 
+    "user" : "karma.tshewang.bhutan@gmail.com", 
+    "createdAt" : ISODate("2022-01-28T10:04:37.603+0000"), 
+    "updatedAt" : ISODate("2022-01-28T10:04:37.603+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61f7b2c4cda4454fb895c0ea"), 
+    "equipment" : "3D Printer", 
+    "times" : "14:30", 
+    "date" : "2022-01-31", 
+    "row" : NumberInt(2), 
+    "col" : NumberInt(13), 
+    "user" : "karma.tshewang.bhutan@gmail.com", 
+    "createdAt" : ISODate("2022-01-31T09:58:28.348+0000"), 
+    "updatedAt" : ISODate("2022-01-31T09:58:28.348+0000"), 
+    "__v" : NumberInt(0)
+}

@@ -35,7 +35,8 @@ router.get('/user/send-verification-email', checkAuth, async (req, res) => {
         await resetToken({ token: token, email: req.user.email }).save();
         // send an email for verification
         mailer.sendVerifyEmail(req.user.email, token);
-        res.render('profile', { username: req.user.username, verified: req.user.isVerified, emailsent: true });
+        res.render('profile', { username: req.user.username, verified: req.user.isVerified, emailsent: true, email:req.user.email,
+    schoolName: req.user.schoolName, phoneNumber: req.user.phoneNumber });
     }
 });
 
@@ -58,7 +59,8 @@ router.get('/user/verifyemail', async (req, res) => {
             await resetToken.findOneAndDelete({ token: token });
             res.redirect('/profile');
         } else {
-            res.render('profile', { username: req.user.username, verified: req.user.isVerified, err: "Invalid token or Token has expired, Try again." });
+            res.render('profile', { username: req.user.username,email:req.user.email,
+                schoolName: req.user.schoolName, phoneNumber: req.user.phoneNumber, verified: req.user.isVerified, err: "Invalid token or Token has expired, Try again." });
         }
     } else {
         // doesnt have a token

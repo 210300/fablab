@@ -7,6 +7,8 @@ require('./passportLocal')(passport);
 // require('./googleAuth')(passport);
 const userRoutes = require('./userRoutes');
 const logger = require('../config/logger');
+const equipment = require('../model/equipment');
+const newsandevents = require('../model/newsandEvents')
 router.use(express.json());
 
 //for logger 
@@ -297,41 +299,60 @@ router.get('/about',(req,res) =>{
     }
 })
 router.get('/electronic', (req,res) =>{
-    if (req.isAuthenticated()) {
-        res.render("electronic", { logged: true });
-    } else {
-        res.render("electronic", { logged: false });
-    }
+    equipment.find({"type": "electronic"}, function(err, data){
+        if (req.isAuthenticated()){
+            if(err) throw err;
+            res.render('electronic', {data, logged:true});
+        }else{
+            res.render('electronic', {data, logged:false});
+        }
+    })  
 })
 router.get('/heaveymachine', (req,res) =>{
-    if (req.isAuthenticated()) {
-        res.render("heavymachine", { logged: true });
-    } else {
-        res.render("heavymachine", { logged: false });
-    }
-})
-router.get('/machine', (req,res) =>{
-    if (req.isAuthenticated()) {
-        res.render("machine", { logged: true });
-    } else {
-        res.render("machine", { logged: false });
-    }
-})
-
-router.get('/membership', (req,res) =>{
-    if (req.isAuthenticated()) {
-        res.render("membership", { logged: true });
-    } else {
-        res.render("membership", { logged: false });
-    }
+    equipment.find({"type": "heavyMachine"}, function(err, data){
+        if (req.isAuthenticated()){
+            if(err) throw err;
+            res.render("heavymachine", {data, logged:true});
+        }else{
+            res.render("heavymachine", {data, logged:false});
+        }
+    })
 })
 router.get('/metal', (req,res) =>{
-    if (req.isAuthenticated()) {
-        res.render("metal", { logged: true });
-    } else {
-        res.render("metal", { logged: false });
-    }
+    equipment.find({"type": "metal"}, function(err, data){
+        if (req.isAuthenticated()){
+            if(err) throw err;
+            res.render('metal', {data, logged:true});
+        }else{
+            res.render('metal', {data, logged:false});
+        }
+    })  
 })
+router.get('/machine', (req,res) =>{
+    equipment.find({"type": "carpentary"}, function(err, data){
+    if (req.isAuthenticated()){
+        if(err) throw err;
+        res.render('machine', {data, logged:true});
+    }else{
+        res.render('machine', {data, logged:false});
+    }
+})  
+});
+router.get('/equipment/(:id)', (req,res) =>{
+    equipment.findById(req.params.id, function(err, data){
+        // console.log(data);
+        if (req.isAuthenticated()){
+            if(err) throw err;
+            res.render('book', {data, logged:true});
+        }else{
+            res.render('book', {data, logged:false});
+        }
+    })  
+    
+})
+
+
+
 router.get('/program', (req,res) =>{
     if (req.isAuthenticated()) {
         res.render("program", { logged: true });
@@ -354,11 +375,15 @@ router.get('/research', (req,res) =>{
     }
 })
 router.get('/announ', (req,res) =>{
-    if (req.isAuthenticated()) {
-        res.render("newsandevents", { logged: true });
-    } else {
-        res.render("newsandevents", { logged: false });
-    }
+    newsandevents.find({}, function(err, data){
+        // console.log(data);
+        if (req.isAuthenticated()){
+            if(err) throw err;
+            res.render('newsandevents', {data, logged:true});
+        }else{
+            res.render('newsandevents', {data, logged:false});
+        }
+    })  
 })
 router.get('/resource', (req,res) =>{
     if (req.isAuthenticated()) {
@@ -388,13 +413,7 @@ router.get('/frontbooking', (req,res) =>{
         res.render("frontendBooking", { logged: false });
     }
 })
-router.get('/book', (req,res) =>{
-    if (req.isAuthenticated()) {
-        res.render("book", { logged: true });
-    } else {
-        res.render("book", { logged: false });
-    }
-})
+
 router.get('/stemfile', (req,res) =>{
     if (req.isAuthenticated()) {
         res.render("stemfile", { logged: true });

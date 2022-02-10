@@ -1,129 +1,127 @@
-<%- include('partials/header.ejs')  %>
-<h1 style="margin: 20px;padding-top: 100px;text-align: center; margin-bottom: 35px; font-size: 2.5rem; font-family: 'montserrat', sans-serif; margin-top: -8px;">About Machines</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Super Fab Lab</title>
+    <base href='/'>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,400i,700,700i">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="stylesheet" href="assets/css/Responsive-Image-Grid-Sunday.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fonts/material-icons.min.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="assets/css/--mp---Testimonials-Slider.css">
+    <link rel="stylesheet" href="assets/css/animated-services.css">
+    <link rel="stylesheet" href="assets/css/Animated-Testimomial-1.css">
+    <link rel="stylesheet" href="assets/css/Animated-Testimomial.css">
+    <link rel="stylesheet" href="assets/css/Animation-Cards-1.css">
+    <link rel="stylesheet" href="assets/css/Animation-Cards.css">
+    <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-142-1.css">
+    <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-142.css">
+    <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-74-1.css">
+    <link rel="stylesheet" href="assets/css/Bold-BS4-Cards-with-Hover-Effect-74.css">
+    <link rel="stylesheet" href="assets/css/Bootstrap-4---Full-Video-Background-v2.css">
+    <link rel="stylesheet" href="assets/css/card-3-column-animation-shadows-images.css">
+    <link rel="stylesheet" href="assets/css/Card-hover-affect-2.css">
+    <link rel="stylesheet" href="assets/css/dh-card-image-left-dark.css">
+    <link rel="stylesheet" href="assets/css/dh-header-cover-image-button.css">
+    <link rel="stylesheet" href="assets/css/dh-row-text-image-right-responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Projects-Horizontal.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Swiper-Slider-Card-For-Blog-Or-Product-1.css">
+    <link rel="stylesheet" href="assets/css/Swiper-Slider-Card-For-Blog-Or-Product.css">
+    <link rel="stylesheet" href="assets/css/Team-with-rotating-cards.css">
+    <link rel="stylesheet" href="assets/css/Team.css">
+    <link rel="stylesheet" href="assets/css/Testimonial-Slider-9-1.css">
+    <link rel="stylesheet" href="assets/css/Testimonial-Slider-9.css">
+    <link rel="stylesheet" href="assets/css/Ultimate-Testimonial-Slider.css">
+    <link rel="stylesheet" href="assets/css/Vdeo.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/WOWSlider-about-us-1.css">
+    <link rel="stylesheet" href="assets/css/WOWSlider-about-us-2.css">
+    <link rel="stylesheet" href="assets/css/WOWSlider-about-us.css">
+    <link rel="stylesheet" href="assets/css/Effective-Pricing-Cards.css">
+    <link rel="stylesheet" href="assets/css/featured-products-slider-1.css">
+    <link rel="stylesheet" href="assets/css/featured-products-slider.css">
+    <link rel="stylesheet" href="assets/css/Features-Boxed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Competences-Grid---3-Columns---Hover-Effect-Pop---Icons.css">
+    
+<body>  
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button fixed-top navbar-transparency" style=" font-family: bell; font-size: 18px; box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;">
+        <div class="container"><img id="logo" src="assets/img/logo.png" height="70px" style="padding-right: 4rem;"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Machines</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="machine">Carpentry lab</a><a class="dropdown-item" href="electronic">Electronic lab</a><a class="dropdown-item" href="heaveymachine">Heavy machinary lab</a><a class="dropdown-item" href="metal">Metal works lab</a><a class="dropdown-item" href="frontbooking">Booking</a></div>
+                    </li>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">Programs </a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="program">Education program</a><a class="dropdown-item" href="trainingprogram">Training program</a><a class="dropdown-item" href="research">Research and Development</a></div>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="service">Services</a>
+
+                    <li class="nav-item"><a class="nav-link" href="announ">News And Events</a>
+
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">About us</a>
+                        <div class="dropdown-menu"><a class="dropdown-item" href="about">The story of sfl</a>
+                            <a class="dropdown-item" href="team">Meet the team</a>
+                            <a class="dropdown-item" href="about">Virtual tour</a>
+                            <a class="dropdown-item" href="gallery">Gallery</a></div>
+                    </li>
+                   
+
+                </ul><span class="navbar-text actions">
+                    <% if(logged){ %>
+                            
+                        <a class="nav-link" href="/logout">Logout</a>
+                      
+                      <% }else{ %>
+
+                      </ul><span class="navbar-text actions"><a class="btn btn-light action-button" role="button" href="login">Log In</a></span>
+                        <!-- <a href="login" class="joinbtn" style="color: black; border: 3px solid orange; background-color: #fff; width: 12%; height: 38px; border-radius: 50px; text-align: center; padding-top: 4px;">Login</a> -->
+                        
+                        <% } %>
+
+                </span>
+            </div>
+                                    
+        </div>
+    </nav>
+<% if(data){ %>
+    <h1 style="margin: 20px;padding-top: 100px;text-align: center; margin-bottom: 35px; font-size: 2.5rem; font-family: 'montserrat', sans-serif; margin-top: -8px;">About Machines</h1>
     <div class="container" data-aos="fade" data-aos-once="true">
         <div class="row" id="serie-card">
-            <div class="col-auto d-flex justify-content-center"><img class="img-fluid" id="poster" src="assets/img/p2.jpg" height="auto" style="height: 350px;width: 350px; border-radius: 30px;"></div>
-            <div class="col"><span id="title" style="font-family: bell; font-size: 1.4rem;">Omax 55555 WaterJet Cutter </span>
+            <div class="col-auto d-flex justify-content-center"><img class="img-fluid" id="poster" src="/imageEquipments/<%= data.image %>" height="auto" style="height: 350px;width: 350px; border-radius: 30px;"></div>
+            <div class="col"><span id="title" style="font-family: bell; font-size: 1.4rem;"><%= data.equipmentName %></span>
                 <div class="d-flex justify-content-end">
                     <p class="text-nowrap"></p><span id="rating-serie"></span>
                     <p></p>
-                </div><span id="plot" style="font-family: bell;font-size: 18px; text-align: justify;"> A water jet cutter is an industrial tool capable of cutting a wide variety of materials using an extremely high-pressure jet of water, or a mixture of water and an abrasive substance. It is the preferred method when the materials being cut are sensitive to the high temperatures generated. Work area: 4 foot by 4 foot Machines a wide range of materials and thicknesses, from metals and composites to glass and plastics, Leaves behind a satin-smooth edge, reducing secondary operations. The environmentally "green" system uses only natural garnet abrasive and water in the cutting process</span>
+                </div><span id="plot" style="font-family: bell;font-size: 18px; text-align: justify;"> <%= data.description %> </span>
             </div>
         </div>
     </div>
      </div>
    </div>
     </div>
-    <h1 style="margin: 30px;text-align: center;padding: 30px; font-size: 2.5rem; font-family: 'montserrat', sans-serif;">Machine Features</h1>
-    <section style="margin: -40px; box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; border-radius: 40px; margin-right: 4rem; margin-left: 4rem;">
-        <div class="container-fluid top-container">
-            <div class="row">
-                <div class="col-2 col-md-1 offset-xl-1 align-self-center">
-                    <div class="row justify-content-end img-row">
-                        <div class="col column" style="padding-right: 0px;padding-bottom: 5px;"><img class="rounded-circle img-fluid" src="assets/img/ph.jpg" onclick="myFunction(this);" alt="image 1"></div>
-                    </div>
-                    <div class="row justify-content-end img-row">
-                        <div class="col column" style="padding-right: 0px;padding-bottom: 5px;"><img class="rounded-circle img-fluid" src="assets/img/ta.jpg" onclick="myFunction(this);" alt="image 2"></div>
-                    </div>
-                    <div class="row justify-content-end img-row">
-                        <div class="col column" style="padding-right: 0px;padding-bottom: 5px;"><img class="rounded-circle img-fluid" src="assets/img/tro.jpg" onclick="myFunction(this);" alt="image 3"></div>
-                    </div>
-                    <div class="row justify-content-end img-row">
-                        <div class="col column" style="padding-right: 0px;padding-bottom: 5px;"><img class="rounded-circle img-fluid" src="assets/img/sod.jpg" onclick="myFunction(this);" alt="image 4"></div>
-                    </div>
-                </div>
-                <div class="col-10 col-md-5 col-xl-4 offset-0 offset-xl-0 align-self-center" style="margin-bottom: 20px;">
-                    <div class="img-container"><img class="rounded-circle" id="expandedImg" style="width:100%" src="assets/img/tai.jpg">
-                        <div id="imgtext"></div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-xl-5 offset-xl-0 align-self-center">
-                    <h1 style="padding: 18px; font-size: 1.5rem; font-family: bell; text-align: center;">Description</h1><!-- <a href="booking.html" class="joinbtn" style="margin-left: 10rem;">Book Now</a> -->
-                    <div>
-                        <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4>Modal Title</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p class="text-center text-muted">Description </p>
-                                    </div>
-                                    <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <p style="margin-bottom: -1.6rem"><strong>&nbsp;</strong>Enjoy Ordering the machine</p>
-                    <ul style="font-size: 17px;color: black; font-family: bell; text-align: center;">
-                        <li>Achieves complex shapes<br></li>
-                        <li>Multiple materials<br></li>
-                        <li>Full pantone color<br></li>
-                        <li>500,000 possible color<br></li>
-                        <li>Work area: 4 foot by 4 foot<br></li>
-                        <li>wide range of materials<br></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section><br><br>
-    <main class="page">
-        <section class="clean-block about-us">
-            <div class="container" style="padding: 55px;">
-                <div class="block-heading" style="margin-top: 45px;">
-                    <!-- <p>Aquí habrán videos, hay 2 formatos:<br></p> -->
-                </div>
-                <h1 style="color: black;margin-bottom: 20px; padding: 30px; margin: 20px; padding-top: 0.1px; font-size: 2.5rem; font-family: 'montserrat', sans-serif; text-align: center;">Machines Tutorial</h1>
-                <div class="row justify-content-center" style="margin-top: -26px;">
-                    <div class="col-sm-12 col-md-6 col-lg-4" style="border-style: none;">
-                        <div class="card clean-card text-center" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube-nocookie.com/embed/7aipHynsoLo" style="height: 200px; border-radius: 40px;"></iframe>
-                            <div class="card-body info">
-                                <h4 class="card-title" style="color: black;">CNC Cutting</h4>
-                                <p class="card-text" style="color: grey;font-size: 17px;">A CNC cutting machine's most obvious characteristic is that it cuts through direct physical contact.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4" style="border-style: none;">
-                        <div class="card clean-card text-center" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube-nocookie.com/embed/gSPlAW44bXQ" style="height: 200px; border-radius: 40px;"></iframe>
-                            <div class="card-body info">
-                                <h4 class="card-title" style="color: black;">Waterjet </h4>
-                                <p class="card-text" style="color: grey;font-size: 17px;">A CNC cutting machine's most obvious characteristic is that it cuts through direct physical contact.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4" style="border-style: none;">
-                        <div class="card clean-card text-center" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube-nocookie.com/embed/f1Cx54yr_hE" style="height: 200px; border-radius: 40px;"></iframe>
-                            <div class="card-body info">
-                                <h4 class="card-title" style="color: black;">Molding&Casting</h4>
-                                <p class="card-text" style="color: grey;font-size: 17px;">WA CNC cutting machine's most obvious characteristic is that it cuts through direct physical contact.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="clean-block about-us" style="padding-top: -15px; margin-top: -40px;">
-            <div class="container">
-                <h1 style="margin-bottom: -35px;">Water Injector</h1>
-                <div class="row justify-content-center">
-                    <div class="col-md-12 col-lg-6" style="border-style: none;">
-                        <div class="card clean-card text-center" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube-nocookie.com/embed/yXuiA_6q1eQ" style="height: 310px; border-radius: 40px;"></iframe>
-                            <div class="card-body info">
-                                <h4 class="card-title" style="color: black;">Mig Welder</h4>
-                                <p class="card-text" style="color: grey;font-size: 17px;">A CNC cutting machine's most obvious characteristic is that it cuts through direct physical contact.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12 col-lg-6" style="border-style: none; ">
-                        <div class="card clean-card text-center" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;"><iframe allowfullscreen="" frameborder="0" src="https://www.youtube-nocookie.com/embed/A7FYMRExufg" style="height: 310px; border-radius: 40px;"></iframe>
-                            <div class="card-body info">
-                                <h4 class="card-title" style="color: black;">Laser Cutter</h4>
-                                <p class="card-text" style="color: grey;font-size: 17px;">A CNC cutting machine's most obvious characteristic is that it cuts through direct physical contact.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+  <% } else{ %>  
+    <h1>bar</h1>
+ <% } %>
+
+   
 <%- include('partials/footer.ejs')  %>

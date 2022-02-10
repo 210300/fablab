@@ -1,32 +1,34 @@
 <%- include('partials/header.ejs')  %>
-
 <div class="container" style="margin: 25px;padding: 126px;">
-    <h1 style="text-align: center;height: -27px;padding: -25px;margin: -55px; font-size: 2.8rem;"><b>Heavy Machinary Lab</b></h1>
+    <h1 style="text-align: center;height: -27px;padding: -20px;margin: -55px; font-family: 'montserrat', sans-serif; font-size: 2.8rem;"><b>Heavy Machines Lab</b></h1>
 </div>
-<section style="margin: -30px; margin-left: 2rem; margin-right: 2rem;">
-    <div class="container" style="margin-top: -120px;">
-        <div class="row">
-            <div class="col-auto col-sm-12 col-md-12 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
-                <div class="bg-light border rounded shadow card" data-bss-hover-animate="pulse"><img class="card-img-top" src="assets/img/VZ3ool.jpg" height="250px;">
-                    <div class="card-body">
-                        <h4 class="card-title" style="font-family:bell;color: black;">Sodick VZ300 Linear Motor Drive Wire-cut Electrical Discharge Machine</h4><p id="lorem">Wire EDM  is a controlled metal-removal process that is used to remove metal by means of electric spark erosion.
-                            Electric sparks are used as the cutting tool to cut the workpiece to produce the finished part to the desired shape. 
-                            </p><a href="/book" class="joinbtn">Read more</a>
+
+    <section style="margin: -30px; margin-left: 2rem; margin-right: 2rem;">
+        <div class="container" style="margin-top: -120px;">
+            <div class="row">
+                <% if(data.length){
+                    for(var u = 0; u< data.length; u++) {%>  
+                <div class="col-auto col-sm-12 col-md-12 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;">
+                    <div class="bg-light border rounded shadow card" data-bss-hover-animate="pulse"><img class="card-img-top" src="/imageEquipments/<%= data[u].image %>" height="250px;">
+                        <div class="card-body">
+                            <h4 class="card-title" style="font-family: bell;color: black;"><%= data[u].equipmentName %></h4><p id="fifty-chars" style="width: 38ch;overflow: hidden; white-space: nowrap;text-overflow: ellipsis"><%= data[u].description %></p><a href="/equipment/<%= data[u].id %>" class="joinbtn">Read more</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-auto col-sm-12 col-md-12 col-lg-4 col-xl-4" style="padding-top: 15px;padding-bottom: 15px;padding-right: 15px;padding-left: 15px;margin-right: 0px;margin-bottom: 0px;">
-                <div class="bg-light border rounded shadow card" data-bss-hover-animate="pulse"><img class="card-img-top" src="assets/img/zund.png" style="width: auto; height: 260px;">
-                    <div class="card-body">
-                        <h4 class="card-title" style="font-family:bell;color: black;">Zund G3 Cutting Machine</h4><p id="lorem">The G3 Cutter is a precision machine. From the innovative drive system to the blade, all components are perfectly coordinated. Zünd's modular design concept lets you put together a tailor-made cutting 
-                            solution configured to meet specific production needs.</p><br><br><a href="/book" class="joinbtn">Read more</a>
-                    </div>
-                </div>
+                <% }
+                                     
+            }else{ %>
+                <tr>
+                   <td colspan="3">No Machines Found</td>
+                </tr>
+             <% } %> 
+            
+               
             </div>
         </div>
-    </div>
-</section>
-    <%- include('partials/footer.ejs')  %>
+    </section>
+    
+<%- include('partials/footer.ejs')  %>
 </body>
 
 </html>

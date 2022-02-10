@@ -127,6 +127,7 @@ booking.post('/uploadequip',upload.single('image'), async (request, response) =>
     let ment = new equipment({
         equipmentName: request.body.equipName,
         image: request.file.filename,
+        description: request.body.description,
         type: 'electronic',
       });
     
@@ -147,6 +148,7 @@ booking.post('/uploadCar',upload.single('image'), async (request, response) => {
     let ment = new equipment({
         equipmentName: request.body.equipName,
         image: request.file.filename,
+        description: request.body.description,
         type: 'carpentary',
       });
     
@@ -162,6 +164,7 @@ booking.post('/uploadCar',upload.single('image'), async (request, response) => {
 //for posting heavy machines lab
 booking.post('/uploadHeav',upload.single('image'), async (request, response) => {
     let ment = new equipment({
+        description: request.body.description,
         equipmentName: request.body.equipName,
         image: request.file.filename,
         type: 'heavyMachine',
@@ -179,6 +182,7 @@ booking.post('/uploadHeav',upload.single('image'), async (request, response) => 
 booking.post('/uploadMetal',upload.single('image'), async (request, response) => {
     let ment = new equipment({
         equipmentName: request.body.equipName,
+        description: request.body.description,
         image: request.file.filename,
         type: 'metal',
       });

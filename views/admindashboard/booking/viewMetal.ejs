@@ -8,6 +8,8 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Equipment Name</th>
+                        <th scope="col">Description</th>
+
                         <th scope="col">Images</th>
                         <th scope="col" class="text-end">Action</th>
                       </tr>
@@ -20,6 +22,8 @@
                             <tr>
                               <th scope="row"><%= (u+1) %></th>
                               <td><%= data[u].equipmentName %></td>
+                              <td><%= data[u].description %></td>
+
                               <td><img src="/imageEquipments/<%= data[u].image %>" alt="" style="height: 100px;width: 100px;"></td>
                               
                               <td>

@@ -1,13 +1,15 @@
 <%- include('../partials/header.ejs')  %>
 <div class="row mb-3" style="margin-left: 10px;">
     <a href="addEquipemnt" class="btn btn-success d-flex-left align-items-center"><i
-            class="material-icons mr-2"></i>Add New Equipemnt</a>
+            class="material-icons mr-2"></i>Add New Electronic</a>
 </div>
                 <table class="table table-bordered" style="margin-left: 10px; width: 95%;">
                     <thead class="thead-dark">
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Equipment Name</th>
+                        <th scope="col">Description</th>
+
                         <th scope="col">Images</th>
                         <th scope="col" class="text-end">Action</th>
                       </tr>
@@ -20,6 +22,8 @@
                             <tr>
                               <th scope="row"><%= (u+1) %></th>
                               <td><%= data[u].equipmentName %></td>
+                              <td><%= data[u].description %></td>
+
                               <td><img src="/imageEquipments/<%= data[u].image %>" alt="" style="height: 100px;width: 100px;"></td>
                               
                               <td>

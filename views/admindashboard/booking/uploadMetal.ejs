@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs')  %>
 
 
-                <table class="table table-bordered" style="margin-left:30px ; width: 100px;">
+                <table class="table table-bordered text-center" style="margin-left:23px ; width: 300%;">
                     <thead class="thead-dark">
                        
                         <h2><b>Metals </b></h2>
@@ -23,7 +23,13 @@
                                   
                                 </div>
                               </div>
-                              
+                              <div class="col-6">
+                                <div class="form-floating mb-3">
+                                    <label for="floatingInput">Description</label>
+                                  <textarea class="form-control-file" id="floatingInput" id="description" name="description" cols="10" rows="8"></textarea>
+                                  
+                                </div>
+                              </div>
                               <div class="col-12 d-grid">
                                 <a href="/viewcarpentary" class="btn btn-warning">Cancel</a>
                                 <button class="btn btn-primary" type="submit">Submit</button>

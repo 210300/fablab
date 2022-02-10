@@ -278,7 +278,7 @@ $(()=>{
                 date: f
             },
             function(data){
-                alert( data);
+                alert(data);
             });
             
         $('#test').attr('class'); 
@@ -303,7 +303,7 @@ $(()=>{
                 date: f
             },
             function(data){
-                alert( data);
+                alert(data);
             });
     });
 

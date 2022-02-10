@@ -14,6 +14,10 @@ const equipmentSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    description: {
+        type: String,
+        
+    },
     timeCreated: {
         type: Date,
         default: () => Date.now(),

@@ -10,15 +10,15 @@ const logger = require('../config/logger');
 router.use(express.json());
 
 //for logger 
-router.use((req, res, next) => {
-    logger.info(req.body);
-    let oldSend = res.render;
-    res.render = function (data) {
-      logger.info(data);
-      oldSend.apply(res, arguments);
-    }
-    next();
-  })
+// router.use((req, res, next) => {
+//     logger.info(req.body);
+//     let oldSend = res.render;
+//     res.render = function (data) {
+//       logger.info(data);
+//       oldSend.apply(res, arguments);
+//     }
+//     next();
+//   })
 
 function checkAuth(req, res,next){
     if (req.isAuthenticated()){
@@ -33,8 +33,10 @@ function checkAuth(req, res,next){
 router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
         res.render("index", { logged: true });
+        logger.customerLogger.log('info','successfully');
     } else {
         res.render("index", { logged: false });
+        logger.customerLogger.log('error', 'not login')
     }
 });
 router.get('/register', (req, res) => {
@@ -43,7 +45,7 @@ router.get('/register', (req, res) => {
 
 
 router.get('/signup', (req, res) => {
-    res.render("signup", {success:1, message:"hi"});
+    res.render("signup");
 });
 router.get('/community', (req, res) => {
     res.render("community");
@@ -67,8 +69,11 @@ router.post('/signup', (req, res) => {
     // check if the are empty 
     if (!email || !username  || !password || !confirmpassword ) {
         res.render("signup", { err: "All Fields Required !"});
+        logger.customerLogger.log('error', 'All the Fields are required')
     } else if (password != confirmpassword) {
         res.send("signup", { err: "Password Don't Match !", data:"password didn't match"});
+        logger.customerLogger.log('error', "password didn't match")
+
     } else {
 
         // validate email and username and password 
@@ -78,6 +83,8 @@ router.post('/signup', (req, res) => {
             if (err) throw err;
             if (data) {
                 res.render("signup", { err: "User Exists, Try Logging In !" });
+                logger.customerLogger.log('error', " User Exists, Try Logging In  ")
+
             } else {
                 // generate a salt
                 bcryptjs.genSalt(12, (err, salt) => {
@@ -104,7 +111,7 @@ router.post('/signup', (req, res) => {
                             // redirect , if you don't want to login
                             
                             res.redirect('/profile');
-                            
+                            logger.customerLogger.log('info', 'sugnup successfully')
                         });
                     })
                 });
@@ -278,7 +285,8 @@ router.get('/logout', (req, res) => {
 
 router.get('/profile', checkAuth, (req, res) => {
     // adding a new parameter for checking verification
-    res.render('profile', { username: req.user.username, verified : req.user.isVerified });
+    res.render('profile', { username: req.user.username, verified : req.user.isVerified, email:req.user.email,
+    schoolName: req.user.schoolName, phoneNumber: req.user.phoneNumber });
 
 });
 router.get('/about',(req,res) =>{
@@ -449,6 +457,28 @@ router.get('/video', (req,res) =>{
         res.render("vidoe", { logged: true });
     } else {
         res.render("vidoe", { logged: false });
+    }
+})
+router.get('/team', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("team", { logged: true });
+    } else {
+        res.render("team", { logged: false });
+    }
+})
+
+router.get('/inventure1', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("inventure2", { logged: true });
+    } else {
+        res.render("inventure2", { logged: false });
+    }
+})
+router.get('/operate1', (req,res) =>{
+    if (req.isAuthenticated()) {
+        res.render("operator1", { logged: true });
+    } else {
+        res.render("operator1", { logged: false });
     }
 })
 

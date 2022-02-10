@@ -24,8 +24,6 @@ exports.DayBooking = async(req, res)=>{
                 user:email,
                 
             }).save((err, result)=>{
-              // console.log(result)
-                // res.redirect('/booking');
                  res.send('You have successfully booked the induction training');    
             })
         }else{

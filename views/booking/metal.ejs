@@ -173,18 +173,35 @@
                                 
                             </table>                        
                         </div>
-                        <div class="modal" >
-                            <div class="modal-box">
-                                <h6>Do you want to book </h6>	        
-                                <div >
-                                    <input type="text" value="num" name="equipmentName" disabled="" style="background-color: #B4DFE0; border: none; width: 30%; padding-left: 3px; color: black;"> on
-                                    <input type="text"  name="timeValue" disabled="" style="background-color: #B4DFE0; border: none; width: 35%; padding-left: 3px; color: black;">
-                                    <p id="dateValue"></p>
+                        <style>
+                            .popbtn{
+                                text-decoration: none;
+                                color: black;
+                                background-color: transparent;
+                                border-radius: 50px;
+                                border: 2px solid orange;
+                                padding: 2px 10px;
+                                font-family: bell;
+                            }
+                            .popbtn:hover{
+                                background-color: orange;
+                                color: white;
+                            }
+                            </style>
+                            <div class="modal" >
+                                <div class="modal-box">
+                                    <div class="btnClose" style="margin-left:95%;"><a href="/metalinfo"><i class="fa fa-window-close" aria-hidden="true"></i></a>
+                                    </div>
+                                    <h6>Do you want to book </h6>	        
+                                    <div>
+                                        <input type="text" value="num" name="equipmentName" disabled="" style="background-color: white; border: none; width: 30%; padding-left: 3px; color: black;"> on
+                                        <input type="text"  name="timeValue" disabled="" style="background-color: white; border: none; width: 35%; padding-left: 3px; color: black;">
+                                        <p id="dateValue"></p>
+                                    </div>
+                                    <button onClick="window.location.reload();" id="btn-yes" class="popbtn">Yes</button>
+                                    <button  onClick="window.location.reload();" id="btn-no" class="popbtn" style="margin-left: 60%;">Cancel</button>
                                 </div>
-                                <button onClick="window.location.reload();" id="btn-yes" class="btn-yes" style=" border-radius: 10px; background-color: #03E08B; width: 15%; float: left; border: none; color: black">Yes </button>
-                                <button  onClick="window.location.reload();" id="btn-no" class="btn-no" style=" border-radius: 10px; background-color: #DA452D; width: 17%; float: right; border: none; color: black">Cancel</button>
                             </div>
-                        </div>
 
                     </div>
             </div>
